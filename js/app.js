@@ -9,12 +9,13 @@ class App extends React.Component {
 		this.state = { page: "", showMenu: false };
 		this.loadWelcome = this.loadWelcome.bind(this);
 		this.loadAbout = this.loadAbout.bind(this);
+		this.loadPortfolio = this.loadPortfolio.bind(this);
 		this.menuShow = this.menuShow.bind(this);
 		this.menuHide = this.menuHide.bind(this);
 	}
 
 	loadWelcome() {
-		const url = "http://localhost:1234/";
+		const url = "http://localhost:4567/";
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -23,11 +24,20 @@ class App extends React.Component {
 	}
 
 	loadAbout() {
-		const url = "http://localhost:1234/about";
+		const url = "http://localhost:4567/about";
 		history.pushState(null, "", url);
 		this.setState({
 			url,
 			page: "about"
+		});
+	}
+
+	loadPortfolio() {
+		const url = "http://localhost:4567/portfolio";
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "portfolio"
 		});
 	}
 
@@ -53,6 +63,10 @@ class App extends React.Component {
 		switch (pathName) {
 			case "/about":
 				this.loadAbout();
+				break;
+
+			case "/portfolio":
+				this.loadPortfolio();
 				break;
 
 			case "/":
@@ -109,31 +123,33 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='App'>
-				<div className='banner'>
-					<div id='title' className='title' onClick={this.loadWelcome}>
-						k a t a g o r a
-					</div>
-					<img className='leafLine' src='columns/method-draw-image.svg' />
-					<div className='quote'>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-							veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-							commodo consequat.{" "}
-						</p>
-					</div>
-				</div>
-
 				<img className='backgroundImage' src='background/redbackground.jpg' />
 
-				<div className='background'>
-					<img className='columnLeft' src='columns/pinkcolumn1.png' />
-					<div className='blogContainer'>
-						<Router page={this.state.page} />
+				<img className='columnLeft' src='columns/pinkcolumn1.png' />
+
+				<div className='mainContent'>
+					<div className='banner'>
+						<div id='title' className='title' onClick={this.loadWelcome}>
+							k a t a g o r a
+						</div>
+						<img className='leafLine' src='columns/method-draw-image.svg' />
+						<div className='quote'>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+								ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+								aliquip ex ea commodo consequat.{" "}
+							</p>
+						</div>
 					</div>
 
-					<div id='box' className='box' />
-					<img className='columnRight' src='columns/pinkcolumn2.png' />
+					<div className='blogContent'>
+						<div id='box' className='box' />
+
+						<div className='blogContainer'>
+							<Router page={this.state.page} />
+						</div>
+					</div>
 				</div>
 
 				<div className='nav'>
@@ -176,7 +192,7 @@ class App extends React.Component {
 								/>
 
 								<div id='gramText' className='hidden'>
-									<h1 style={{ paddingTop: "3px", marginLeft: "36px" }}>
+									<h1 style={{ paddingTop: "5px", marginLeft: "36px" }}>
 										&nbsp;Off the Gram
 									</h1>
 								</div>
@@ -192,11 +208,12 @@ class App extends React.Component {
 									alt='House'
 									width='50'
 									height='50'
+									onClick={this.loadPortfolio}
 								/>
 
 								<div id='houseText' className='hidden'>
-									<h1 style={{ paddingTop: "8px", marginLeft: "36px" }}>
-										&nbsp;Home Sweet Home
+									<h1 style={{ paddingTop: "6px", marginLeft: "36px" }}>
+										&nbsp;Portfolio
 									</h1>
 								</div>
 							</div>
@@ -207,6 +224,8 @@ class App extends React.Component {
 				<div
 					className={this.state.showMenu ? "backgroundShowMenu" : "backgroundHideMenu"}
 				/>
+
+				<img className='columnRight' src='columns/pinkcolumn2.png' />
 			</div>
 		);
 	}
