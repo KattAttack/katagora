@@ -75,7 +75,12 @@ export class About extends React.Component {
 							}}
 							className='aboutMeText'
 						>
+							<div
+								className='aboutYellowBox'
+								style={{ maxHeight: this.state.showMe ? 500 : 0 }}
+							/>
 							<div className='A1'>My relationship with identity is complicated</div>
+
 							<div className='A2'>
 								and a tinder or bumblebff or Instagram bio section or LinkedIn about
 								me post just won't cut it. Refined, character restricted, selective,
@@ -118,6 +123,10 @@ export class About extends React.Component {
 							}}
 							className='aboutRelText'
 						>
+							<div
+								className='relYellowBox'
+								style={{ maxHeight: this.state.showRel ? 500 : 0 }}
+							/>
 							<div className='A1'>My relationship with identity is complicated</div>
 							<div className='A2'>
 								and a tinder or bumblebff or Instagram bio or LinkedIn about me post
@@ -161,6 +170,10 @@ export class About extends React.Component {
 							}}
 							className='aboutGoalsText'
 						>
+							<div
+								className='goalsYellowBox'
+								style={{ maxHeight: this.state.showGoals ? 500 : 0 }}
+							/>
 							<div className='A1'>My relationship with identity is complicated</div>
 							<div className='A2'>
 								and a tinder or bumblebff or Instagram bio or LinkedIn about me post
@@ -204,6 +217,10 @@ export class About extends React.Component {
 							}}
 							className='aboutInfoText'
 						>
+							<div
+								className='infoYellowBox'
+								style={{ maxHeight: this.state.showInfo ? 500 : 0 }}
+							/>
 							<div className='A1'>My relationship with identity is complicated</div>
 							<div className='A2'>
 								and a tinder or bumblebff or Instagram bio or LinkedIn about me post
