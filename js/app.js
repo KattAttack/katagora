@@ -15,7 +15,11 @@ class App extends React.Component {
 	}
 
 	loadWelcome() {
-		const url = "http://localhost:4567/";
+		// console.log("PRODUCTION", PRODUCTION);
+		let url = "http://localhost:4567/";
+		if (PRODUCTION) {
+			url = "http://www.katagora.com/";
+		}
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -24,7 +28,10 @@ class App extends React.Component {
 	}
 
 	loadAbout() {
-		const url = "http://localhost:4567/about";
+		let url = "http://localhost:4567/about";
+		if (PRODUCTION) {
+			url = "http://www.katagora.com/about";
+		}
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -33,7 +40,10 @@ class App extends React.Component {
 	}
 
 	loadPortfolio() {
-		const url = "http://localhost:4567/portfolio";
+		let url = "http://localhost:4567/portfolio";
+		if (PRODUCTION) {
+			url = "http://www.katagora.com/portfolio";
+		}
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -43,13 +53,15 @@ class App extends React.Component {
 
 	menuShow() {
 		this.setState({
-			showMenu: true
+			showMenu: true,
+			showMoon: true
 		});
 	}
 
 	menuHide() {
 		this.setState({
-			showMenu: false
+			showMenu: false,
+			showMoon: false
 		});
 	}
 
@@ -144,7 +156,7 @@ class App extends React.Component {
 					</div>
 
 					<div className='blogContent'>
-						<div id='box' className='box' />
+						<div className='blogYellowBox' />
 
 						<div className='blogContainer'>
 							<Router page={this.state.page} />
@@ -173,8 +185,8 @@ class App extends React.Component {
 								/>
 
 								<div id='girlText' className='hidden'>
-									<h1 style={{ paddingTop: "6.5px", marginLeft: "25px" }}>
-										&nbsp;Who is She
+									<h1 style={{ paddingTop: "6.5px", marginLeft: "0px" }}>
+										&nbsp;> Who is She
 									</h1>
 								</div>
 							</div>
@@ -221,9 +233,9 @@ class App extends React.Component {
 					</ul>
 				</div>
 
-				<div
-					className={this.state.showMenu ? "backgroundShowMenu" : "backgroundHideMenu"}
-				/>
+				<div className={this.state.showMenu ? "sunHide" : "sunShow"} />
+
+				<div className={this.state.showMoon ? "moonShow" : "moonHide"} />
 
 				<img className='columnRight' src='columns/pinkcolumn2.png' />
 			</div>
