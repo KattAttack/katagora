@@ -4,9 +4,8 @@
 	"description": "",
 	"main": "webpack.config.js",
 	"scripts": {
-		"start": "webpack-dev-server --mode development --open",
-		"dev": "webpack --mode development --watch",
-		"build": "webpack --mode production",
+		"dev": "webpack --env.PRODUCTION=false --mode development --watch",
+		"build": "webpack --env.PRODUCTION=true --mode production",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"proxy": "http://localhost:5000/",

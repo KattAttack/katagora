@@ -10,12 +10,14 @@ class App extends React.Component {
 		this.loadWelcome = this.loadWelcome.bind(this);
 		this.loadAbout = this.loadAbout.bind(this);
 		this.loadPortfolio = this.loadPortfolio.bind(this);
+		// this.loadTictactoe = this.loadTictactoe.bind(this);
 		this.menuShow = this.menuShow.bind(this);
 		this.menuHide = this.menuHide.bind(this);
 	}
 
 	loadWelcome() {
-		const url = "http://localhost:4567/";
+		const url = HOST;
+
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -24,7 +26,7 @@ class App extends React.Component {
 	}
 
 	loadAbout() {
-		const url = "http://localhost:4567/about";
+		const url = `${HOST}about`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -33,13 +35,22 @@ class App extends React.Component {
 	}
 
 	loadPortfolio() {
-		const url = "http://localhost:4567/portfolio";
+		const url = `${HOST}portfolio`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
 			page: "portfolio"
 		});
 	}
+
+	// loadTictactoe() {
+	// 	const url = `${HOST}tictactoe`;
+	// 	history.pushState(null, "", url);
+	// 	this.setState({
+	// 		url,
+	// 		page: "tictactoe"
+	// 	});
+	// }
 
 	menuShow() {
 		this.setState({
@@ -68,6 +79,10 @@ class App extends React.Component {
 			case "/portfolio":
 				this.loadPortfolio();
 				break;
+
+			// case "/tictactoe":
+			// 	this.loadTictactoe();
+			// 	break;
 
 			case "/":
 				this.loadWelcome();
