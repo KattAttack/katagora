@@ -14,6 +14,9 @@ export default function Router(props) {
 		case "welcome":
 			return <Welcome />;
 
+		case "tictactoe":
+			return <Tictactoe />;
+
 		default:
 			return <Welcome />;
 	}
