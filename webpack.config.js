@@ -49,7 +49,12 @@ module.exports = env => {
 		},
 		plugins: [
 			htmlWebpackPlugin,
-			new webpack.DefinePlugin({ PRODUCTION: env.PRODUCTION === "true" })
+			new webpack.DefinePlugin({
+				HOST:
+					env.PRODUCTION === "true"
+						? JSON.stringify("http://www.katagora.com/")
+						: JSON.stringify("http://localhost:4567/")
+			})
 		]
 	};
 };
