@@ -2,6 +2,7 @@ import React from "react";
 import { Welcome } from "./Welcome";
 import { About } from "./About";
 import { Portfolio } from "./Portfolio";
+import { Tictactoe } from "./tictactoe/Tictactoe";
 
 export default function Router(props) {
 	switch (props.page) {
