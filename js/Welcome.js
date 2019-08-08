@@ -3,6 +3,7 @@ export function Welcome() {
 	return (
 		<div id='welcomeText' className='welcome'>
 			<div className='W1'>ﾟ･:*✧.･ WELCOME to my AGORA ･.✧*:･ﾟ</div>
+			<div className='welcomeYellowBox' />
 			<div className='W2'>
 				Here you will find a collection of my <br />
 				current interests and offerings to the public. <br />
