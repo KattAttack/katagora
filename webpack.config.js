@@ -1,5 +1,6 @@
 var path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
 	template: "./src/index.html",
