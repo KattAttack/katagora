@@ -16,8 +16,12 @@ class App extends React.Component {
 	}
 
 	loadWelcome() {
+		if (HOST === "http://www.katagora.com/") {
+			history.replaceState(null, "", HOST);
+		}
 		const url = HOST;
-
+		console.log("URL", url);
+		console.log("history", history);
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -160,6 +164,9 @@ class App extends React.Component {
 	}
 
 	render() {
+		// if (HOST === "http://www.katagora.com/") {
+		// 	history.replaceState(null, "", HOST);
+		// }
 		// if (this.state.page === "tictactoe") {
 		// 	return <Router page={this.state.page} />;
 		// }
@@ -177,10 +184,10 @@ class App extends React.Component {
 						<img className='leafLine' src='columns/method-draw-image.svg' />
 						<div className='quote'>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-								ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-								aliquip ex ea commodo consequat.{" "}
+								The word 'Agora' (pronounced 'ah-go-RAH’) was a central public space
+								in ancient Greek city-states. The literal meaning of the word is
+								"gathering place" or "assembly". The agora was the center of the
+								athletic, artistic, spiritual and political life in the city.{" "}
 							</p>
 						</div>
 					</div>
@@ -223,7 +230,7 @@ class App extends React.Component {
 
 								<div id='girlText' className='hidden'>
 									<h1 style={{ paddingTop: "6.5px", marginLeft: "0px" }}>
-										&nbsp;Who is She
+										&nbsp; Who is She
 									</h1>
 								</div>
 							</div>
@@ -259,7 +266,7 @@ class App extends React.Component {
 
 								<div id='gramText' className='hidden'>
 									<h1 style={{ paddingTop: "5px", marginLeft: "10px" }}>
-										&nbsp;Off the Gram
+										&nbsp; Off the Gram
 									</h1>
 								</div>
 							</div>
@@ -295,7 +302,7 @@ class App extends React.Component {
 
 								<div id='houseText' className='hidden'>
 									<h1 style={{ paddingTop: "6px", marginLeft: "10px" }}>
-										&nbsp;Portfolio
+										&nbsp; Portfolio
 									</h1>
 								</div>
 							</div>
