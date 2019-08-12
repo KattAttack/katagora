@@ -20,7 +20,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	height: 20%;
+	height: auto;
 }
 
 .title {
@@ -34,7 +34,7 @@ body {
 	margin: -1.3% 0% -1.6% 0%;
 	z-index: 3;
 	font-family: "Rakkas", cursive;
-	font-size: 108px;
+	font-size: 5.5vw;
 	cursor: pointer;
 	color: #fffff7;
 	letter-spacing: -7px;
@@ -48,7 +48,7 @@ body {
 
 	font-family: "Rakkas", cursive;
 	align-content: center;
-	font-size: 108px;
+	font-size: 5.5vw;
 	cursor: pointer;
 	color: #fffff7;
 	letter-spacing: -7px;
@@ -83,7 +83,7 @@ body {
 	font-family: "Covered By Your Grace", cursive;
 	// font-family: "Rock Salt", cursive;
 	/* font-family: "Reenie Beanie", cursive; */
-	font-size: 18px;
+	font-size: 1vw;
 	color: #ffffeb;
 	width: 48%;
 	height: auto;
@@ -91,16 +91,15 @@ body {
 
 .blogContent {
 	display: flex;
-	margin-top: 30px;
 	justify-content: center;
 	width: 100%;
-	height: 80%;
+	height: auto;
 }
 
 .columnLeft {
 	align-self: flex-start;
 	margin-top: -95.5px;
-	width: 15.5%;
+	width: 290px;
 	height: 1250px;
 }
 
@@ -269,7 +268,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 95%;
-	padding-bottom: 20px;
 
 	.A1 {
 		font-family: "Permanent Marker", cursive;
@@ -282,10 +280,16 @@ body {
 	}
 
 	.A2 {
+		background-color: #fcffe6af;
 		font-family: "Patrick Hand", cursive;
 		// font-family: "Covered By Your Grace", cursive;
 		font-size: 1.3vw;
 		margin-top: 17px;
+		padding-top: 6px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 15px;
+		border-radius: 21px;
 		width: 97%;
 		color: #ffacb3;
 	}
@@ -327,7 +331,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 95%;
-	padding-bottom: 20px;
 
 	.A1 {
 		font-family: "Permanent Marker", cursive;
@@ -340,10 +343,16 @@ body {
 	}
 
 	.A2 {
+		background-color: #fcffe6af;
 		font-family: "Patrick Hand", cursive;
 		// font-family: "Covered By Your Grace", cursive;
 		font-size: 1.3vw;
 		margin-top: 17px;
+		padding-top: 6px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 15px;
+		border-radius: 21px;
 		width: 97%;
 		color: #ffacb3;
 	}
@@ -385,7 +394,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 95%;
-	padding-bottom: 20px;
 
 	.A1 {
 		font-family: "Permanent Marker", cursive;
@@ -398,10 +406,16 @@ body {
 	}
 
 	.A2 {
+		background-color: #fcffe6af;
 		font-family: "Patrick Hand", cursive;
 		// font-family: "Covered By Your Grace", cursive;
 		font-size: 1.3vw;
 		margin-top: 17px;
+		padding-top: 6px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 15px;
+		border-radius: 21px;
 		width: 97%;
 		color: #ffacb3;
 	}
@@ -455,10 +469,16 @@ body {
 	}
 
 	.A2 {
+		background-color: #fcffe6af;
 		font-family: "Patrick Hand", cursive;
 		// font-family: "Covered By Your Grace", cursive;
 		font-size: 1.3vw;
 		margin-top: 17px;
+		padding-top: 6px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 15px;
+		border-radius: 21px;
 		width: 97%;
 		color: #ffacb3;
 	}
@@ -468,8 +488,8 @@ body {
 	position: absolute;
 	z-index: -1;
 	top: -1%;
-	left: 10%;
-	width: 80%;
+	left: 8%;
+	width: 84%;
 	height: auto;
 }
 
@@ -478,7 +498,7 @@ body {
 	align-self: flex-end;
 	position: inherit;
 	margin-top: -95.5px;
-	width: 15.5%;
+	width: 290px;
 	height: 1250px;
 }
 
@@ -499,7 +519,7 @@ body {
 	z-index: -1;
 	// right: 66%;
 	height: 65px;
-	width: 282px;
+	width: 302px;
 	// width: 55%;
 	border-radius: 32px;
 	background-color: #ff7d88bd;
@@ -529,7 +549,7 @@ body {
 	z-index: -1;
 	// right: 64%;
 	height: 65px;
-	width: 320px;
+	width: 345px;
 	// width: 62%;
 	border-radius: 32px;
 	background-color: #ff7d88bd;
@@ -558,7 +578,7 @@ body {
 	z-index: -1;
 	// right: 64%;
 	height: 65px;
-	width: 267px;
+	width: 292px;
 	// width: 52%;
 	border-radius: 32px;
 	background-color: #ff7d88bd;
@@ -624,7 +644,7 @@ body {
 	position: absolute;
 	z-index: 4;
 	flex-direction: column;
-	left: 6.5%;
+	left: 83px;
 	top: 24%;
 	width: 28.7%;
 	height: 50%;
@@ -646,8 +666,9 @@ body {
 
 img.resize {
 	align-self: center;
-	width: 70px;
-	height: 70px;
+	margin-left: 5.5px;
+	width: 60px;
+	height: 60px;
 	cursor: pointer;
 }
 
