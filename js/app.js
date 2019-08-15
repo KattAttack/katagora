@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../css/styles.scss";
 import Router from "./Router";
+import { ShapesGame } from "./shapes/src/components/ShapesGame";
 
 class App extends React.Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class App extends React.Component {
 		this.loadAbout = this.loadAbout.bind(this);
 		this.loadPortfolio = this.loadPortfolio.bind(this);
 		// this.loadTictactoe = this.loadTictactoe.bind(this);
+		this.loadShapes = this.loadShapes.bind(this);
 		this.menuShow = this.menuShow.bind(this);
 		this.menuHide = this.menuHide.bind(this);
 	}
@@ -56,6 +58,15 @@ class App extends React.Component {
 	// 	});
 	// }
 
+	loadShapes() {
+		const url = `${HOST}shapes`;
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "shapes"
+		});
+	}
+
 	menuShow() {
 		this.setState({
 			showMenu: true,
@@ -89,6 +100,10 @@ class App extends React.Component {
 			// case "/tictactoe":
 			// 	this.loadTictactoe();
 			// 	break;
+
+			case "/shapes":
+				this.loadShapes();
+				break;
 
 			case "/":
 				this.loadWelcome();
@@ -145,7 +160,6 @@ class App extends React.Component {
 			});
 		});
 
-		const houseContainer = document.getElementById("houseContainer");
 		const house = document.getElementById("house");
 		var houseText = document.getElementById("houseText");
 		house.addEventListener("mouseover", e => {
@@ -164,157 +178,164 @@ class App extends React.Component {
 	}
 
 	render() {
-		// if (HOST === "http://www.katagora.com/") {
-		// 	history.replaceState(null, "", HOST);
-		// }
-		// if (this.state.page === "tictactoe") {
-		// 	return <Router page={this.state.page} />;
-		// }
+		if (this.state.page === "shapes") {
+			return <ShapesGame />;
+		}
 		return (
-			<div className='App'>
-				<img className='backgroundImage' src='background/redbackground.jpg' />
+			<div>
+				<div className='katagoraBody' />
+				<div className='App'>
+					<img className='backgroundImage' src='background/redbackground.jpg' />
 
-				<img className='columnLeft' src='columns/pinkcolumn1.png' />
+					<img className='columnLeft' src='columns/pinkcolumn1.png' />
 
-				<div className='mainContent'>
-					<div className='banner'>
-						<div id='title' className='title' onClick={this.loadWelcome}>
-							k a t a g o r a
+					<div className='mainContent'>
+						<div className='banner'>
+							<div id='title' className='title' onClick={this.loadWelcome}>
+								k a t a g o r a
+							</div>
+							<img className='leafLine' src='columns/method-draw-image.svg' />
+							<div className='quote'>
+								<p>
+									The word 'Agora' (pronounced 'ah-go-RAH’) was a central public
+									space in ancient Greek city-states. The literal meaning of the
+									word is "gathering place" or "assembly". The agora was the
+									center of the athletic, artistic, spiritual and political life
+									in the city.{" "}
+								</p>
+							</div>
 						</div>
-						<img className='leafLine' src='columns/method-draw-image.svg' />
-						<div className='quote'>
-							<p>
-								The word 'Agora' (pronounced 'ah-go-RAH’) was a central public space
-								in ancient Greek city-states. The literal meaning of the word is
-								"gathering place" or "assembly". The agora was the center of the
-								athletic, artistic, spiritual and political life in the city.{" "}
-							</p>
+
+						<div className='blogContent'>
+							<div className='blogYellowBox' />
+
+							<div className='blogContainer'>
+								<Router page={this.state.page} />
+							</div>
 						</div>
 					</div>
 
-					<div className='blogContent'>
-						<div className='blogYellowBox' />
+					<div className='nav'>
+						<ul style={{ listStyle: "none" }}>
+							<li>
+								<div className='container'>
+									<div className='menuBackground'>
+										<div
+											className={
+												this.state.showGirl ? "girlShow" : "girlHide"
+											}
+										/>
+									</div>
+									<img
+										className='resize'
+										id='girl'
+										src='girl.png'
+										alt='Girl'
+										onClick={this.loadAbout}
+										onMouseEnter={() => {
+											this.setState({
+												showGirl: true
+											});
+										}}
+										onMouseLeave={() => {
+											this.setState({
+												showGirl: false
+											});
+										}}
+									/>
 
-						<div className='blogContainer'>
-							<Router page={this.state.page} />
-						</div>
+									<div id='girlText' className='hidden'>
+										<h1 style={{ paddingTop: "6.5px", marginLeft: "0px" }}>
+											&nbsp; Who is She
+										</h1>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div className='container'>
+									<div className='menuBackground'>
+										<div
+											className={
+												this.state.showGram ? "gramShow" : "gramHide"
+											}
+										/>
+									</div>
+
+									<img
+										className='navImage'
+										id='gram'
+										src='instagram.png'
+										alt='Instagram'
+										width='50'
+										height='50'
+										// onClick={this.loadTictactoe}
+										// onMouseEnter={() => {
+										// 	this.setState({
+										// 		showGram: true
+										// 	});
+										// }}
+										// onMouseLeave={() => {
+										// 	this.setState({
+										// 		showGram: false
+										// 	});
+										// }}
+									/>
+
+									<div id='gramText' className='hidden'>
+										<h1 style={{ paddingTop: "5px", marginLeft: "10px" }}>
+											&nbsp; Off the Gram
+										</h1>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div className='container'>
+									<div className='menuBackground'>
+										<div
+											className={
+												this.state.showHouse ? "houseShow" : "houseHide"
+											}
+										/>
+									</div>
+
+									<img
+										className='navImage'
+										id='house'
+										src='https://image.flaticon.com/icons/png/512/86/86329.png'
+										alt='House'
+										width='50'
+										height='50'
+										onClick={this.loadPortfolio}
+										onMouseEnter={() => {
+											this.setState({
+												showHouse: true
+											});
+										}}
+										onMouseLeave={() => {
+											this.setState({
+												showHouse: false
+											});
+										}}
+									/>
+
+									<div id='houseText' className='hidden'>
+										<h1 style={{ paddingTop: "6px", marginLeft: "10px" }}>
+											&nbsp; Portfolio
+										</h1>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
+
+					{/* <div className={this.state.showMenu ? "sunHide" : "sunShow"} /> */}
+
+					{/* <div className={this.state.showMoon ? "moonShow" : "moonHide"} /> */}
+
+					<img className='columnRight' src='columns/pinkcolumn2.png' />
 				</div>
-
-				<div className='nav'>
-					<ul style={{ listStyle: "none" }}>
-						<li>
-							<div className='container'>
-								<div className='menuBackground'>
-									<div
-										className={this.state.showGirl ? "girlShow" : "girlHide"}
-									/>
-								</div>
-								<img
-									className='resize'
-									id='girl'
-									src='girl.png'
-									alt='Girl'
-									onClick={this.loadAbout}
-									onMouseEnter={() => {
-										this.setState({
-											showGirl: true
-										});
-									}}
-									onMouseLeave={() => {
-										this.setState({
-											showGirl: false
-										});
-									}}
-								/>
-
-								<div id='girlText' className='hidden'>
-									<h1 style={{ paddingTop: "6.5px", marginLeft: "0px" }}>
-										&nbsp; Who is She
-									</h1>
-								</div>
-							</div>
-						</li>
-
-						<li>
-							<div className='container'>
-								<div className='menuBackground'>
-									<div
-										className={this.state.showGram ? "gramShow" : "gramHide"}
-									/>
-								</div>
-
-								<img
-									className='navImage'
-									id='gram'
-									src='instagram.png'
-									alt='Instagram'
-									width='50'
-									height='50'
-									// onClick={this.loadTictactoe}
-									// onMouseEnter={() => {
-									// 	this.setState({
-									// 		showGram: true
-									// 	});
-									// }}
-									// onMouseLeave={() => {
-									// 	this.setState({
-									// 		showGram: false
-									// 	});
-									// }}
-								/>
-
-								<div id='gramText' className='hidden'>
-									<h1 style={{ paddingTop: "5px", marginLeft: "10px" }}>
-										&nbsp; Off the Gram
-									</h1>
-								</div>
-							</div>
-						</li>
-
-						<li>
-							<div className='container'>
-								<div className='menuBackground'>
-									<div
-										className={this.state.showHouse ? "houseShow" : "houseHide"}
-									/>
-								</div>
-
-								<img
-									className='navImage'
-									id='house'
-									src='https://image.flaticon.com/icons/png/512/86/86329.png'
-									alt='House'
-									width='50'
-									height='50'
-									onClick={this.loadPortfolio}
-									onMouseEnter={() => {
-										this.setState({
-											showHouse: true
-										});
-									}}
-									onMouseLeave={() => {
-										this.setState({
-											showHouse: false
-										});
-									}}
-								/>
-
-								<div id='houseText' className='hidden'>
-									<h1 style={{ paddingTop: "6px", marginLeft: "10px" }}>
-										&nbsp; Portfolio
-									</h1>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				{/* <div className={this.state.showMenu ? "sunHide" : "sunShow"} /> */}
-
-				{/* <div className={this.state.showMoon ? "moonShow" : "moonHide"} /> */}
-
-				<img className='columnRight' src='columns/pinkcolumn2.png' />
 			</div>
 		);
 	}
