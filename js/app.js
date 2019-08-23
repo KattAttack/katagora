@@ -160,9 +160,9 @@ class App extends React.Component {
 	}
 
 	render() {
-		// if (this.state.page === "tictactoe") {
-		// 	return <Router page={this.state.page} />;
-		// }
+		if (this.state.page === "tictactoe") {
+			return <Router page={this.state.page} />;
+		}
 		return (
 			<div className='App'>
 				<img className='backgroundImage' src='background/redbackground.jpg' />
@@ -244,17 +244,17 @@ class App extends React.Component {
 									alt='Instagram'
 									width='50'
 									height='50'
-									// onClick={this.loadTictactoe}
-									// onMouseEnter={() => {
-									// 	this.setState({
-									// 		showGram: true
-									// 	});
-									// }}
-									// onMouseLeave={() => {
-									// 	this.setState({
-									// 		showGram: false
-									// 	});
-									// }}
+									onClick={this.loadTictactoe}
+									onMouseEnter={() => {
+										this.setState({
+											showGram: true
+										});
+									}}
+									onMouseLeave={() => {
+										this.setState({
+											showGram: false
+										});
+									}}
 								/>
 
 								<div id='gramText' className='hidden'>
