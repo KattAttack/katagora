@@ -728,12 +728,37 @@ img.resize {
 
 .tictactoeGame {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	background-color: #f8033e;
+	border-radius: 123px;
+	height: 97.7vh;
+
+	.tictactoeTitle {
+		display: flex;
+
+		align-self: center;
+		justify-content: center;
+		font-size: 10vw;
+		font-family: "Mrs Sheppards", cursive;
+
+		-webkit-text-fill-color: #feffd1;
+		text-shadow: 0px 0px 5px #fff486, 0px 0px 7px #fff486;
+
+		width: 62vw;
+	}
+
 	.gridContainer {
-		margin-top: 12%;
-		border: 5px solid #ff5b70;
-		width: 500px;
-		height: 500px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		align-self: center;
+		justify-content: center;
+		z-index: 5;
+		margin-top: 8vh;
+		border: 5px solid #fff486;
+		border-radius: 25px;
+		width: 20vw;
+		height: 20vw;
 
 		.row1 {
 			display: flex;
@@ -741,29 +766,31 @@ img.resize {
 			position: relative;
 			z-index: 2;
 			width: 100%;
-			height: 33.33%;
-
-			.empty {
-				display: flex;
-				position: relative;
-				z-index: 3;
-				border-left: 1px solid #ff818c;
-				border-right: 1px solid #ff818c;
-				width: 100%;
-				height: 100%;
-			}
-
-			.filled {
-				display: flex;
-				position: relative;
-				z-index: 3;
-				background: #feffd1;
-				border-left: 1px solid #ff818c;
-				border-right: 1px solid #ff818c;
-				width: 100%;
-				height: 100%;
-			}
+			height: 33%;
 		}
+
+		.empty {
+			display: flex;
+			position: relative;
+			z-index: 3;
+			border-radius: 20px;
+			border-left: 1px solid #ff818c;
+			border-right: 1px solid #ff818c;
+			width: 100%;
+			height: 100%;
+		}
+
+		.filled {
+			display: flex;
+			position: relative;
+			z-index: -3;
+			border-radius: 25px;
+			border-left: 1px solid #ff818c;
+			border-right: 1px solid #ff818c;
+			width: 100%;
+			height: 100%;
+		}
+
 		.row2 {
 			display: flex;
 			flex-direction: row;
@@ -772,28 +799,7 @@ img.resize {
 			border-top: solid #ff818c;
 			border-bottom: solid #ff818c;
 			width: 100%;
-			height: 33.33%;
-
-			.empty {
-				display: flex;
-				position: relative;
-				z-index: 3;
-				border-left: 1px solid #ff818c;
-				border-right: 1px solid #ff818c;
-				width: 100%;
-				height: 100%;
-			}
-
-			.filled {
-				display: flex;
-				position: relative;
-				z-index: 3;
-				background: #feffd1;
-				border-left: 1px solid #ff818c;
-				border-right: 1px solid #ff818c;
-				width: 100%;
-				height: 100%;
-			}
+			height: 33%;
 		}
 		.row3 {
 			display: flex;
@@ -801,35 +807,41 @@ img.resize {
 			position: relative;
 			z-index: 2;
 			width: 100%;
-			height: 33.33%;
-
-			.empty {
-				display: flex;
-				position: relative;
-				z-index: 3;
-				border-left: 1px solid #ff818c;
-				border-right: 1px solid #ff818c;
-				width: 100%;
-				height: 100%;
-			}
-
-			.filled {
-				display: flex;
-				position: relative;
-				z-index: 3;
-				background: #feffd1;
-				border-left: 1px solid #ff818c;
-				border-right: 1px solid #ff818c;
-				width: 100%;
-				height: 100%;
-			}
+			height: 33%;
 		}
 	}
 	.gameMessageContainer {
 		display: flex;
+		flex-direction: column;
+		align-self: center;
+		align-items: center;
 		position: relative;
-		z-index: 3;
-		width: 33.33%;
-		height: 100%;
+		margin-top: 5vh;
+		border: #fff486 3px solid;
+		border-radius: 55px;
+		background-color: #fff486;
+		width: 25vw;
+		height: 100px;
+	}
+
+	.newGame {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		margin-top: 10px;
+		-webkit-text-fill-color: white;
+		align-items: center;
+		border: #f80355 3px solid;
+		background-color: #f80355;
+		border-radius: 25px;
+		width: 4vw;
+		height: 1.5vw;
+	}
+
+	.gameMessage {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		margin-top: 12px;
 	}
 }
