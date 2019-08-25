@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/styles.scss";
+// import { Animated } from "react-animated-css";
 
 var board = [[0, 1, 2], [0, 1, 2], [0, 1, 2]];
 
@@ -12,7 +13,9 @@ export class Tictactoe extends React.Component {
 			row3: [0, 0, 0],
 			player1: null,
 			winMessage: null,
-			player: 1
+			player: 1,
+			newGameOnMount: true,
+			counter: 1
 		};
 		this.winLogic = this.winLogic.bind(this);
 		this.boxSelect = this.boxSelect.bind(this);
@@ -21,7 +24,13 @@ export class Tictactoe extends React.Component {
 
 	winLogic(num) {
 		console.log("Win logic running");
-		let winMessage;
+
+		console.log("count", this.state.counter);
+		if (this.state.counter === 9 && this.state.winMessage === null) {
+			this.setState({
+				winMessage: "Nobody wins!"
+			});
+		}
 
 		//vertical win
 		if (
@@ -129,13 +138,30 @@ export class Tictactoe extends React.Component {
 	}
 
 	newGame() {
+		if (this.state.newGameOnMount === true) {
+			const newGame = document.querySelector(".newGameLoadAnimation");
+			newGame.className = "newGame";
+			newGame.classList.remove("animation");
+			window.requestAnimationFrame(function() {
+				newGame.classList.add("animation");
+			});
+		} else if (this.state.newGameOnMount === false) {
+			const newGame = document.querySelector(".newGame");
+
+			newGame.classList.remove("animation");
+			window.requestAnimationFrame(function() {
+				newGame.classList.add("animation");
+			});
+		}
+
 		this.setState({
 			row1: [0, 0, 0],
 			row2: [0, 0, 0],
 			row3: [0, 0, 0],
 			player1: null,
 			winMessage: null,
-			player: 1
+			player: 1,
+			newGameOnMount: false
 		});
 	}
 
@@ -147,7 +173,8 @@ export class Tictactoe extends React.Component {
 				console.log(this.state.row3);
 				this.setState(
 					{
-						player: 2
+						player: 2,
+						counter: this.state.counter + 1
 					},
 					this.winLogic(1)
 				);
@@ -156,7 +183,8 @@ export class Tictactoe extends React.Component {
 				console.log(this.state.row3);
 				this.setState(
 					{
-						player: 1
+						player: 1,
+						counter: this.state.counter + 1
 					},
 					this.winLogic(2)
 				);
@@ -168,7 +196,8 @@ export class Tictactoe extends React.Component {
 				console.log(this.state.row2);
 				this.setState(
 					{
-						player: 2
+						player: 2,
+						counter: this.state.counter + 1
 					},
 					this.winLogic(1)
 				);
@@ -177,7 +206,8 @@ export class Tictactoe extends React.Component {
 				console.log(this.state.row2);
 				this.setState(
 					{
-						player: 1
+						player: 1,
+						counter: this.state.counter + 1
 					},
 					this.winLogic(2)
 				);
@@ -189,7 +219,8 @@ export class Tictactoe extends React.Component {
 				console.log(this.state.row1);
 				this.setState(
 					{
-						player: 2
+						player: 2,
+						counter: this.state.counter + 1
 					},
 					this.winLogic(1)
 				);
@@ -198,7 +229,8 @@ export class Tictactoe extends React.Component {
 				console.log(this.state.row1);
 				this.setState(
 					{
-						player: 1
+						player: 1,
+						counter: this.state.counter + 1
 					},
 					this.winLogic(2)
 				);
@@ -217,6 +249,13 @@ export class Tictactoe extends React.Component {
 		return (
 			<div className='tictactoeGame'>
 				<div className='tictactoeTitle'> Pick a Square!</div>
+				{/* <Animated
+					animationIn='fadeIn'
+					animationOut='fadeOut'
+					animationInDuration='2000'
+					style={{ display: "flex", justifyContent: "center" }}
+					isVisible={true}
+				> */}
 				<div className='gridContainer'>
 					<div className='row1'>
 						{board[0].map((index, row) => {
@@ -296,11 +335,25 @@ export class Tictactoe extends React.Component {
 						})}
 					</div>
 				</div>
+				{/* </Animated> */}
+
 				<div className='gameMessageContainer'>
-					<div className='newGame' onClick={e => this.newGame()}>
+					{/* <Animated
+					animationIn='bounceIn' animationOut='bounceOut' animationInDuration='2000'
+					isVisible={true}> */}
+					<div
+						id='newGame'
+						className='newGameLoadAnimation'
+						onClick={e => this.newGame()}
+					>
 						New Game
 					</div>
-					<div className='gameMessage'>{this.state.winMessage}</div>
+					{/* </Animated> */}
+					<div className='gameMessage'>
+						{this.state.winMessage === null
+							? `Player ${this.state.player}'s turn!`
+							: this.state.winMessage}
+					</div>
 				</div>
 			</div>
 		);
