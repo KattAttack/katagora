@@ -51,6 +51,28 @@ export class Portfolio extends React.Component {
 						</a>
 					</div>
 				</div>
+
+				<div className='imageContainer'>
+					<img
+						src='portfolio/tictactoe.png'
+						alt='Tictactoe Game'
+						onClick={() => {
+							this.openInNewTab(`${HOST}tictactoe`);
+						}}
+					/>
+					<div className='links'>
+						<div
+							onClick={() => {
+								this.openInNewTab(`${HOST}tictactoe`);
+							}}
+						>
+							Tictactoe Game
+						</div>
+						<a href='' target='_blank'>
+							GitHub Repository
+						</a>
+					</div>
+				</div>
 			</div>
 		);
 	}

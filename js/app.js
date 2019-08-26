@@ -11,7 +11,7 @@ class App extends React.Component {
 		this.loadWelcome = this.loadWelcome.bind(this);
 		this.loadAbout = this.loadAbout.bind(this);
 		this.loadPortfolio = this.loadPortfolio.bind(this);
-		// this.loadTictactoe = this.loadTictactoe.bind(this);
+		this.loadTictactoe = this.loadTictactoe.bind(this);
 		this.loadShapes = this.loadShapes.bind(this);
 		this.menuShow = this.menuShow.bind(this);
 		this.menuHide = this.menuHide.bind(this);
@@ -49,14 +49,14 @@ class App extends React.Component {
 		});
 	}
 
-	// loadTictactoe() {
-	// 	const url = `${HOST}tictactoe`;
-	// 	history.pushState(null, "", url);
-	// 	this.setState({
-	// 		url,
-	// 		page: "tictactoe"
-	// 	});
-	// }
+	loadTictactoe() {
+		const url = `${HOST}tictactoe`;
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "tictactoe"
+		});
+	}
 
 	loadShapes() {
 		const url = `${HOST}shapes`;
@@ -97,9 +97,9 @@ class App extends React.Component {
 				this.loadPortfolio();
 				break;
 
-			// case "/tictactoe":
-			// 	this.loadTictactoe();
-			// 	break;
+			case "/tictactoe":
+				this.loadTictactoe();
+				break;
 
 			case "/shapes":
 				this.loadShapes();
@@ -178,6 +178,9 @@ class App extends React.Component {
 	}
 
 	render() {
+		if (this.state.page === "tictactoe") {
+			return <Router page={this.state.page} />;
+		}
 		if (this.state.page === "shapes") {
 			return <ShapesGame />;
 		}
@@ -269,17 +272,17 @@ class App extends React.Component {
 										alt='Instagram'
 										width='50'
 										height='50'
-										// onClick={this.loadTictactoe}
-										// onMouseEnter={() => {
-										// 	this.setState({
-										// 		showGram: true
-										// 	});
-										// }}
-										// onMouseLeave={() => {
-										// 	this.setState({
-										// 		showGram: false
-										// 	});
-										// }}
+										// onClick={}
+										onMouseEnter={() => {
+											this.setState({
+												showGram: true
+											});
+										}}
+										onMouseLeave={() => {
+											this.setState({
+												showGram: false
+											});
+										}}
 									/>
 
 									<div id='gramText' className='hidden'>
