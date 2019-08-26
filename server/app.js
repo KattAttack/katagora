@@ -13,6 +13,10 @@ app.get("/portfolio", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
 
+app.get("/tictactoe", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
+});
+
 app.get("/shapes", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
