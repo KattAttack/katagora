@@ -78,7 +78,8 @@ export class About extends React.Component {
 							<div className='A1'>My relationship with identity is complicated</div>
 
 							<div className='A2'>
-								and an Instagram or LinkedIn bio just won't cut it. Filtered,
+								Will expand on this once released to the public.
+								{/* and an Instagram or LinkedIn bio just won't cut it. Filtered,
 								selective, and character restricted, these entries are good for what
 								they're used for. But what I choose to share here goes beyond a
 								quick post and is more intimate than job placement. I was born in
@@ -90,7 +91,7 @@ export class About extends React.Component {
 								it'll change it'll grow. I will ramble, quote, spout prose, fuck up.
 								And hopefully by the end we'll have gotten so far that the beginning
 								and our questions of identity go to rest in the folds of our smiles.
-								Some day you'll know more, but for now, this is it.
+								Some day you'll know more, but for now, this is it. */}
 							</div>
 						</div>
 					</div>
@@ -118,23 +119,8 @@ export class About extends React.Component {
 							}}
 							className='aboutRelText'
 						>
-							<div className='A1'>My relationship with identity is complicated</div>
-							<div className='A2'>
-								and a tinder or bumblebff or Instagram bio or LinkedIn about me post
-								just won't cut it. Refined, character restricted, selective,
-								filtered, these entries are good for what they're used for, but what
-								I choose to share here is more intimate than carnal desire and more
-								personal than job placement. I was born in America but I am Russian.
-								Though that's my ethnicity, I don't particularly care for it. Though
-								I'm not Greek I am intrigued. Though I'm 23 there are days I feel 40
-								and days I feel 5. I will tell you my dreams, I will share my doubts
-								and worries. I will open a window and you will see the world as I
-								do. This will be fluid, it'll change it'll grow. I will ramble,
-								quote, spout prose, fuck up. And hopefully by the end we'll have
-								gotten so far that the beginning and our questions of identity go to
-								rest in the folds of our smiles. Some day you'll know more, but for
-								now, this is it.
-							</div>
+							<div className='A1'>More on this coming soon</div>
+							<div className='A2'>Nothing here yet but keep your eyes peeled!</div>
 						</div>
 					</div>
 				</div>
@@ -161,22 +147,11 @@ export class About extends React.Component {
 							}}
 							className='aboutGoalsText'
 						>
-							<div className='A1'>My relationship with identity is complicated</div>
+							<div className='A1'>I hope to achieve many things</div>
 							<div className='A2'>
-								and a tinder or bumblebff or Instagram bio or LinkedIn about me post
-								just won't cut it. Refined, character restricted, selective,
-								filtered, these entries are good for what they're used for, but what
-								I choose to share here is more intimate than carnal desire and more
-								personal than job placement. I was born in America but I am Russian.
-								Though that's my ethnicity, I don't particularly care for it. Though
-								I'm not Greek I am intrigued. Though I'm 23 there are days I feel 40
-								and days I feel 5. I will tell you my dreams, I will share my doubts
-								and worries. I will open a window and you will see the world as I
-								do. This will be fluid, it'll change it'll grow. I will ramble,
-								quote, spout prose, fuck up. And hopefully by the end we'll have
-								gotten so far that the beginning and our questions of identity go to
-								rest in the folds of our smiles. Some day you'll know more, but for
-								now, this is it.
+								Get a job, visit Athens, repaint my car, create a coffee table book,
+								design my own fashion line/accessories, write a collection of
+								nonfiction shorts...
 							</div>
 						</div>
 					</div>
@@ -204,22 +179,11 @@ export class About extends React.Component {
 							}}
 							className='aboutInfoText'
 						>
-							<div className='A1'>My relationship with identity is complicated</div>
+							<div className='A1'>Where you can see more of me</div>
 							<div className='A2'>
-								and a tinder or bumblebff or Instagram bio or LinkedIn about me post
-								just won't cut it. Refined, character restricted, selective,
-								filtered, these entries are good for what they're used for, but what
-								I choose to share here is more intimate than carnal desire and more
-								personal than job placement. I was born in America but I am Russian.
-								Though that's my ethnicity, I don't particularly care for it. Though
-								I'm not Greek I am intrigued. Though I'm 23 there are days I feel 40
-								and days I feel 5. I will tell you my dreams, I will share my doubts
-								and worries. I will open a window and you will see the world as I
-								do. This will be fluid, it'll change it'll grow. I will ramble,
-								quote, spout prose, fuck up. And hopefully by the end we'll have
-								gotten so far that the beginning and our questions of identity go to
-								rest in the folds of our smiles. Some day you'll know more, but for
-								now, this is it.
+								Email: katrinakozorezov@gmail.com <br></br>
+								linkedIn: https://www.linkedin.com/in/katxagora/<br></br>
+								GitHub: https://github.com/KattAttack
 							</div>
 						</div>
 					</div>
