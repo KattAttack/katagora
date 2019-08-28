@@ -82,6 +82,7 @@ var firstSquare = (
 			stroke='#e50000'
 			fill='transparent'
 			strokeWidth='3'
+			cursor='pointer'
 		/>
 	</svg>
 );
@@ -100,6 +101,7 @@ var firstPentagon = (
 			stroke='purple'
 			fill='transparent'
 			strokeWidth='3'
+			cursor='pointer'
 		/>
 	</svg>
 );
@@ -123,6 +125,7 @@ var firstHexagon = (
 			stroke='green'
 			fill='transparent'
 			strokeWidth='3'
+			cursor='pointer'
 		/>
 	</svg>
 );
@@ -146,6 +149,7 @@ var firstOctagon = (
 			stroke='yellow'
 			fill='transparent'
 			strokeWidth='3'
+			cursor='pointer'
 		/>
 	</svg>
 );
