@@ -26,6 +26,7 @@ export class Portfolio extends React.Component {
 					/>
 					<div className='links'>
 						<div
+							className='gameTitle'
 							onClick={() => {
 								this.openInNewTab(`${HOST}shapes`);
 							}}
@@ -62,6 +63,7 @@ export class Portfolio extends React.Component {
 					/>
 					<div className='links'>
 						<div
+							className='gameTitle'
 							onClick={() => {
 								this.openInNewTab(`${HOST}tictactoe`);
 							}}
