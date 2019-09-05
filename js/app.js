@@ -11,8 +11,9 @@ class App extends React.Component {
 		this.loadWelcome = this.loadWelcome.bind(this);
 		this.loadAbout = this.loadAbout.bind(this);
 		this.loadPortfolio = this.loadPortfolio.bind(this);
-		this.loadTictactoe = this.loadTictactoe.bind(this);
 		this.loadShapes = this.loadShapes.bind(this);
+		this.loadKittyCards = this.loadKittyCards.bind(this);
+		this.loadTictactoe = this.loadTictactoe.bind(this);
 		this.menuShow = this.menuShow.bind(this);
 		this.menuHide = this.menuHide.bind(this);
 	}
@@ -49,21 +50,30 @@ class App extends React.Component {
 		});
 	}
 
-	loadTictactoe() {
-		const url = `${HOST}tictactoe`;
-		history.pushState(null, "", url);
-		this.setState({
-			url,
-			page: "tictactoe"
-		});
-	}
-
 	loadShapes() {
 		const url = `${HOST}shapes`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
 			page: "shapes"
+		});
+	}
+
+	loadKittyCards() {
+		const url = `${HOST}kittyCards`;
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "kittyCards"
+		});
+	}
+
+	loadTictactoe() {
+		const url = `${HOST}tictactoe`;
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "tictactoe"
 		});
 	}
 
@@ -97,12 +107,16 @@ class App extends React.Component {
 				this.loadPortfolio();
 				break;
 
-			case "/tictactoe":
-				this.loadTictactoe();
-				break;
-
 			case "/shapes":
 				this.loadShapes();
+				break;
+
+			case "/kittyCards":
+				this.loadKittyCards();
+				break;
+
+			case "/tictactoe":
+				this.loadTictactoe();
 				break;
 
 			case "/":
@@ -183,6 +197,9 @@ class App extends React.Component {
 		}
 		if (this.state.page === "shapes") {
 			return <ShapesGame />;
+		}
+		if (this.state.page === "kittyCards") {
+			return <Router page={this.state.page} />;
 		}
 		return (
 			<div>

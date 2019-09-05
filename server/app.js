@@ -6,14 +6,12 @@ const path = require("path");
 app.get("/", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
+
 app.get("/about", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
-app.get("/portfolio", (req, res) => {
-	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
-});
 
-app.get("/tictactoe", (req, res) => {
+app.get("/portfolio", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
 
@@ -21,7 +19,16 @@ app.get("/shapes", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
 
+app.get("/kittyCards", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
+});
+
+app.get("/tictactoe", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
+});
+
 app.use(express.static(path.resolve(__dirname, "../assets")));
+app.use(express.static(path.resolve(__dirname, "../js/kittyCards/")));
 app.use(express.static(path.resolve(__dirname, "../js/shapes/src/components")));
 app.use(express.static(path.resolve(__dirname, "../dist")));
 
