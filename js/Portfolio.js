@@ -40,13 +40,24 @@ export class Portfolio extends React.Component {
 				</div>
 
 				<div className='imageContainer'>
-					<a href='http://localhost:3000/'>
-						<img src='portfolio/kitties.png' alt='Kitty Cards' />
-					</a>
+					<img
+						src='portfolio/kitties.png'
+						alt='Kitty Cards'
+						onClick={() => {
+							this.openInNewTab(`${HOST}kittyCards`);
+						}}
+					/>
+
 					<div className='links'>
-						<a href='http://localhost:3000/' target='_blank'>
+						<div
+							className='gameTitle'
+							onClick={() => {
+								this.openInNewTab(`${HOST}kittyCards`);
+							}}
+						>
 							Kitty Cards
-						</a>
+						</div>
+
 						<a href='https://github.com/KattAttack/kittyCards' target='_blank'>
 							GitHub Repository
 						</a>

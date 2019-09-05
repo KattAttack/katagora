@@ -9,7 +9,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = env => {
 	return {
-		entry: path.resolve(__dirname, "./js/app.js"),
+		entry: ["babel-polyfill", path.resolve(__dirname, "./js/app.js")],
 		output: {
 			path: path.resolve(__dirname, "./dist"),
 			filename: "bundle.js"
@@ -26,7 +26,8 @@ module.exports = env => {
 						loader: "babel-loader",
 						options: {
 							presets: ["@babel/preset-env", "@babel/preset-react"],
-							plugins: ["@babel/plugin-proposal-class-properties"]
+							plugins: ["@babel/plugin-proposal-class-properties"],
+							plugins: ["@babel/plugin-syntax-dynamic-import"]
 						}
 					}
 				},
@@ -47,6 +48,10 @@ module.exports = env => {
 							}
 						}
 					]
+				},
+				{
+					test: /\.(gif|svg|jpg|png)$/,
+					loader: "file-loader"
 				}
 			]
 		},

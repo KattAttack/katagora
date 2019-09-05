@@ -5,7 +5,6 @@ import { InteractiveShapes } from "./InteractiveShapes";
 import { LetterBank } from "./LetterBank";
 import { Word } from "./Word";
 import { SvgShape } from "./SvgShape";
-import { confettiColor } from "./Values";
 
 export class ShapesGame extends Component {
 	constructor(props) {
