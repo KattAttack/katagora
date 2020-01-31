@@ -5,7 +5,7 @@ import Router from "./Router";
 import { ShapesGame } from "./shapes/src/components/ShapesGame";
 
 class App extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = { page: "", showGirl: false, showGram: false, showHouse: false };
 		this.loadWelcome = this.loadWelcome.bind(this);
@@ -193,173 +193,167 @@ class App extends React.Component {
 
 	render() {
 		if (this.state.page === "tictactoe") {
-			return <Router page={this.state.page} />;
+			return <Router page={ this.state.page } />;
 		}
 		if (this.state.page === "shapes") {
 			return <ShapesGame />;
 		}
 		if (this.state.page === "kittyCards") {
-			return <Router page={this.state.page} />;
+			return <Router page={ this.state.page } />;
 		}
 		return (
-			<div>
-				<div className='katagoraBody' />
-				<div className='App'>
-					<img className='backgroundImage' src='background/redbackground.jpg' />
+			<div id="App" className="bodyApp">
 
-					<img className='columnLeft' src='columns/pinkcolumn1.png' />
+				<div className='backgroundImage' />
 
-					<div className='mainContent'>
-						<div className='banner'>
-							<div id='title' className='title' onClick={this.loadWelcome}>
-								k a t a g o r a
-							</div>
-							<img className='leafLine' src='columns/method-draw-image.svg' />
-							<div className='quote'>
-								<p>
-									The word 'Agora' (pronounced 'ah-go-RAH’) was a central public
-									space in ancient Greek city-states. The literal meaning of the
-									word is "gathering place" or "assembly". The agora was the
-									center of the athletic, artistic, spiritual and political life
-									in the city.{" "}
-								</p>
-							</div>
+				<img className='columnLeft' src='columns/pinkcolumn1.png' />
+
+				<div className="titleBackground" >
+					<div className="titleShadow">
+						<div id='title' className='title' onClick={ this.loadWelcome }>
+							k a t a g o r a
 						</div>
+					</div>
+					<img className='leafLine' src='columns/method-draw-image.svg' />
+				</div>
 
-						<div className='blogContent'>
+				<div className='quote'>
+					<p>
+						The word 'Agora' (pronounced 'ah-go-RAH’) was a central public
+						space in ancient Greek city-states. The literal meaning of the
+						word is "gathering place" or "assembly". The agora was the
+						center of the athletic, artistic, spiritual and political life
+							in the city.{ " " }
+					</p>
+				</div>
+				<div className='blogContainer'>
+					<Router page={ this.state.page } />
+				</div>
+				{/* <div className='blogContent'>
 							<div className='blogYellowBox' />
 
-							<div className='blogContainer'>
-								<Router page={this.state.page} />
+
+						</div> */}
+
+
+				<div className='nav'>
+					<ul style={ { listStyle: "none" } }>
+						<li>
+							<div className='container'>
+								<div className='menuBackground'>
+									<div
+										className={
+											this.state.showGirl ? "girlShow" : "girlHide"
+										}
+									/>
+								</div>
+								<img
+									className='resize'
+									id='girl'
+									src='girl.png'
+									alt='Girl'
+									onClick={ this.loadAbout }
+									onMouseEnter={ () => {
+										this.setState({
+											showGirl: true
+										});
+									} }
+									onMouseLeave={ () => {
+										this.setState({
+											showGirl: false
+										});
+									} }
+								/>
+
+								<div id='girlText' className='hidden'>
+									<h1 style={ { paddingTop: "6.5px", marginLeft: "0px" } }>
+										&nbsp; Who is She
+									</h1>
+								</div>
 							</div>
-						</div>
-					</div>
+						</li>
 
-					<div className='nav'>
-						<ul style={{ listStyle: "none" }}>
-							<li>
-								<div className='container'>
-									<div className='menuBackground'>
-										<div
-											className={
-												this.state.showGirl ? "girlShow" : "girlHide"
-											}
-										/>
-									</div>
-									<img
-										className='resize'
-										id='girl'
-										src='girl.png'
-										alt='Girl'
-										onClick={this.loadAbout}
-										onMouseEnter={() => {
-											this.setState({
-												showGirl: true
-											});
-										}}
-										onMouseLeave={() => {
-											this.setState({
-												showGirl: false
-											});
-										}}
+						<li>
+							<div className='container'>
+								<div className='menuBackground'>
+									<div
+										className={
+											this.state.showGram ? "gramShow" : "gramHide"
+										}
 									/>
-
-									<div id='girlText' className='hidden'>
-										<h1 style={{ paddingTop: "6.5px", marginLeft: "0px" }}>
-											&nbsp; Who is She
-										</h1>
-									</div>
 								</div>
-							</li>
 
-							<li>
-								<div className='container'>
-									<div className='menuBackground'>
-										<div
-											className={
-												this.state.showGram ? "gramShow" : "gramHide"
-											}
-										/>
-									</div>
+								<img
+									className='navImage'
+									id='gram'
+									src='instagram.png'
+									alt='Instagram'
+									width='50'
+									height='50'
+									// onClick={}
+									onMouseEnter={ () => {
+										this.setState({
+											showGram: true
+										});
+									} }
+									onMouseLeave={ () => {
+										this.setState({
+											showGram: false
+										});
+									} }
+								/>
 
-									<img
-										className='navImage'
-										id='gram'
-										src='instagram.png'
-										alt='Instagram'
-										width='50'
-										height='50'
-										// onClick={}
-										onMouseEnter={() => {
-											this.setState({
-												showGram: true
-											});
-										}}
-										onMouseLeave={() => {
-											this.setState({
-												showGram: false
-											});
-										}}
+								<div id='gramText' className='hidden'>
+									<h1 style={ { paddingTop: "5px", marginLeft: "10px" } }>
+										&nbsp; Off the Gram
+									</h1>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<div className='container'>
+								<div className='menuBackground'>
+									<div
+										className={
+											this.state.showHouse ? "houseShow" : "houseHide"
+										}
 									/>
-
-									<div id='gramText' className='hidden'>
-										<h1 style={{ paddingTop: "5px", marginLeft: "10px" }}>
-											&nbsp; Off the Gram
-										</h1>
-									</div>
 								</div>
-							</li>
 
-							<li>
-								<div className='container'>
-									<div className='menuBackground'>
-										<div
-											className={
-												this.state.showHouse ? "houseShow" : "houseHide"
-											}
-										/>
-									</div>
+								<img
+									className='navImage'
+									id='house'
+									src='https://image.flaticon.com/icons/png/512/86/86329.png'
+									alt='House'
+									width='50'
+									height='50'
+									onClick={ this.loadPortfolio }
+									onMouseEnter={ () => {
+										this.setState({
+											showHouse: true
+										});
+									} }
+									onMouseLeave={ () => {
+										this.setState({
+											showHouse: false
+										});
+									} }
+								/>
 
-									<img
-										className='navImage'
-										id='house'
-										src='https://image.flaticon.com/icons/png/512/86/86329.png'
-										alt='House'
-										width='50'
-										height='50'
-										onClick={this.loadPortfolio}
-										onMouseEnter={() => {
-											this.setState({
-												showHouse: true
-											});
-										}}
-										onMouseLeave={() => {
-											this.setState({
-												showHouse: false
-											});
-										}}
-									/>
-
-									<div id='houseText' className='hidden'>
-										<h1 style={{ paddingTop: "6px", marginLeft: "10px" }}>
-											&nbsp; Portfolio
-										</h1>
-									</div>
+								<div id='houseText' className='hidden'>
+									<h1 style={ { paddingTop: "6px", marginLeft: "10px" } }>
+										&nbsp; Portfolio
+									</h1>
 								</div>
-							</li>
-						</ul>
-					</div>
-
-					{/* <div className={this.state.showMenu ? "sunHide" : "sunShow"} /> */}
-
-					{/* <div className={this.state.showMoon ? "moonShow" : "moonHide"} /> */}
-
-					<img className='columnRight' src='columns/pinkcolumn2.png' />
-				</div>
+							</div>
+						</li>
+					</ul>
+				</div><img className='columnRight' src='columns/pinkcolumn2.png' />
 			</div>
 		);
 	}
 }
 
-const rootElement = document.getElementById("Root");
+const rootElement = document.getElementById("App");
 ReactDOM.render(<App />, rootElement);

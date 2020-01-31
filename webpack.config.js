@@ -9,13 +9,13 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = env => {
 	return {
-		entry: ["babel-polyfill", path.resolve(__dirname, "./js/app.js")],
+		entry: [ "babel-polyfill", path.resolve(__dirname, "./js/app.js") ],
 		output: {
 			path: path.resolve(__dirname, "./dist"),
 			filename: "bundle.js"
 		},
 		resolve: {
-			extensions: [".js", ".jsx"]
+			extensions: [ ".js", ".jsx" ]
 		},
 		module: {
 			rules: [
@@ -25,15 +25,16 @@ module.exports = env => {
 					use: {
 						loader: "babel-loader",
 						options: {
-							presets: ["@babel/preset-env", "@babel/preset-react"],
-							plugins: ["@babel/plugin-proposal-class-properties"],
-							plugins: ["@babel/plugin-syntax-dynamic-import"]
+							presets: [ "@babel/preset-env", "@babel/preset-react" ],
+							plugins: [ "@babel/plugin-proposal-class-properties" ],
+							plugins: [ "@babel/plugin-syntax-dynamic-import" ],
+							plugins: [ "@babel/plugin-proposal-class-properties" ]
 						}
 					}
 				},
 				{
 					test: /\.scss$/,
-					use: ["style-loader", "css-loader", "sass-loader"]
+					use: [ "style-loader", "css-loader", "sass-loader" ]
 				},
 				{
 					test: /\.md$/,
