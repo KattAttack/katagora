@@ -6,7 +6,7 @@ import undoButton from "./images/buttons/undoButton.png";
 import "../../css/styles.scss";
 
 export class KittyCards extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 
 		this.state = {
@@ -16,20 +16,19 @@ export class KittyCards extends React.Component {
 			id: 0,
 			currentPage: 1,
 			imagesPerPage: 5,
-			noKitties: false
+			noKitties: 0
 		};
-		this.cacheKittyPic = this.cacheKittyPic.bind(this);
+		this.prepareKittyImages = this.prepareKittyImages.bind(this);
 		this.nextPage = this.nextPage.bind(this);
+		this.cacheKittyPic = this.cacheKittyPic.bind(this);
+
 	}
 
-	nextPage(number) {
-		// console.log("Clicked PageNumber", number);
-		this.setState({
-			currentPage: number
-		});
+	componentDidMount() {
+		this.prepareKittyImages()
 	}
 
-	async componentDidMount() {
+	async prepareKittyImages() {
 		let kittyImageSrcs = [];
 		for (var i = 1; i < 21; i++) {
 			const kittyImageSrc = await import(`./images/cats/cat${i}.jpg`);
@@ -42,12 +41,19 @@ export class KittyCards extends React.Component {
 		});
 	}
 
+	nextPage(number) {
+		// console.log("Clicked PageNumber", number);
+		this.setState({
+			currentPage: number
+		});
+	}
+
 	addKittyPic() {
 		const { kittyImageSrcs, kittyImages, id } = this.state;
 		const num = Math.floor(Math.random() * kittyImageSrcs.length - 1) + 1;
 		const newKittyImage = {
 			id,
-			src: kittyImageSrcs[num]
+			src: kittyImageSrcs[ num ]
 		};
 
 		if (kittyImageSrcs.length === 0) {
@@ -56,7 +62,7 @@ export class KittyCards extends React.Component {
 			});
 			console.log("No More Kitties :c");
 		} else if (kittyImages.length <= 19) {
-			const allKittyImages = [...kittyImages, newKittyImage];
+			const allKittyImages = [ ...kittyImages, newKittyImage ];
 			if (kittyImages.length / 5 === 0) {
 				this.setState({
 					kittyImageSrcs: kittyImageSrcs.filter((_, index) => index !== num),
@@ -74,8 +80,7 @@ export class KittyCards extends React.Component {
 	}
 
 	cacheKittyPic(image) {
-		let pageNumber;
-		const { kittyCache, kittyImages } = this.state;
+		const { kittyCache, kittyImages, currentPage } = this.state;
 
 		let newKittyImages = [];
 
@@ -87,10 +92,12 @@ export class KittyCards extends React.Component {
 			}
 		});
 
-		if (newKittyImages.length % 5 === 0) {
-			pageNumber = newKittyImages.length / 5;
+		let pageNumber = newKittyImages.length / 5;
+
+		if (newKittyImages.length % 5 === 0 && currentPage > pageNumber) {
 			// console.log("newKittyImages", newKittyImages);
-			// console.log("pageNumber", pageNumber);
+			console.log("currentPage", this.state.currentPage)
+			console.log("pageNumber", pageNumber);
 			this.nextPage(pageNumber);
 		}
 
@@ -112,10 +119,10 @@ export class KittyCards extends React.Component {
 			pageNumber = this.state.currentPage;
 		}
 
-		const lastCached = kittyCache[kittyCache.length - 1];
+		const lastCached = kittyCache[ kittyCache.length - 1 ];
 		const newKittyImage = lastCached;
-		const allKittyImages = [...kittyImages, newKittyImage];
-		allKittyImages.sort(function(a, b) {
+		const allKittyImages = [ ...kittyImages, newKittyImage ];
+		allKittyImages.sort(function (a, b) {
 			return a.id - b.id;
 		});
 
@@ -136,6 +143,18 @@ export class KittyCards extends React.Component {
 		);
 	}
 
+	refresh() {
+		this.setState({
+			kittyImageSrcs: [],
+			kittyImages: [],
+			kittyCache: [],
+			id: 0,
+			currentPage: 1,
+			imagesPerPage: 5,
+			noKitties: 0
+		}, this.prepareKittyImages)
+	}
+
 	render() {
 		// console.log("State", this.state);
 		const { kittyImages, kittyCache, currentPage, imagesPerPage } = this.state;
@@ -147,16 +166,11 @@ export class KittyCards extends React.Component {
 		return (
 			<div className='kittyApp'>
 				<h1>React Move Demo</h1>
-				<h2>Press the kitty button for kitties!</h2>
 
-				<div className='numbersContainer'>
-					<PageNumbers
-						nextPage={this.nextPage}
-						kittyImages={kittyImages}
-						imagesPerPage={imagesPerPage}
-						currentPage={currentPage}
-					/>
-				</div>
+				{ this.state.noKitties ?
+					<div className='appMessage'>No More Kitties :c</div> :
+					<h2>Press the kitty button for kitties!</h2>
+				}
 
 				<div className='container'>
 					<div className='top'>
@@ -167,30 +181,38 @@ export class KittyCards extends React.Component {
 									? { cursor: "not-allowed" }
 									: { cursor: "pointer" }
 							}
-							src={catButton}
+							src={ catButton }
 							alt='Cat Button'
-							onClick={this.state.noKitties ? null : e => this.addKittyPic()}
+							onClick={ this.state.noKitties ? null : e => this.addKittyPic() }
 						/>
 						<TopCards
-							currentImages={currentImages}
-							cacheKittyPic={this.cacheKittyPic}
+							currentImages={ currentImages }
+							cacheKittyPic={ this.cacheKittyPic }
+						/>
+					</div>
+
+					<div className='numbersContainer'>
+						<PageNumbers
+							nextPage={ this.nextPage }
+							kittyImages={ kittyImages }
+							imagesPerPage={ imagesPerPage }
+							currentPage={ currentPage }
 						/>
 					</div>
 
 					<div className='bottom'>
 						<img
 							className='buttonImg'
-							src={undoButton}
+							src={ undoButton }
 							alt='Undo Button'
-							onClick={e => this.recallKittyPic()}
+							onClick={ e => this.recallKittyPic() }
 						/>
 
-						<BottomCards kittyCache={kittyCache} />
+						<BottomCards kittyCache={ kittyCache } />
 					</div>
 				</div>
-				<div className='appMessage'>
-					{this.state.noKitties ? "No More Kitties :c" : null}
-				</div>
+				{ this.state.noKitties ? <i className="material-icons" onClick={ e => this.refresh() }>autorenew</i> : null }
+
 			</div>
 		);
 	}
@@ -204,18 +226,18 @@ function PageNumbers(props) {
 	}
 	return (
 		<div id='page-numbers' className='pageNumbers'>
-			{pageNumbers.map(number => {
+			{ pageNumbers.map(number => {
 				return (
 					<div
-						key={number}
-						id={number}
-						className={number === currentPage ? "selectedNumber" : "numbers"}
-						onClick={e => nextPage(number)}
+						key={ number }
+						id={ number }
+						className={ number === currentPage ? "selectedNumber" : "numbers" }
+						onClick={ e => nextPage(number) }
 					>
-						{number}
+						{ number }
 					</div>
 				);
-			})}
+			}) }
 		</div>
 	);
 }
@@ -226,57 +248,57 @@ function TopCards(props) {
 	return (
 		<div className='topCards'>
 			<NodeGroup
-				data={currentImages}
-				keyAccessor={d => d.id}
-				start={() => ({
+				data={ currentImages }
+				keyAccessor={ d => d.id }
+				start={ () => ({
 					opacity: 0,
 					width: 0
-				})}
-				enter={d => [
+				}) }
+				enter={ d => [
 					{
-						opacity: [1],
+						opacity: [ 1 ],
 						timing: { duration: 400, delay: 150 }
 					},
 					{
-						width: [306],
+						width: [ 306 ],
 						timing: { duration: 400 }
 					}
-				]}
-				update={d => [
+				] }
+				update={ d => [
 					{
-						width: [306],
+						width: [ 306 ],
 						timing: { duration: 150 }
 					}
-				]}
-				leave={() => [
+				] }
+				leave={ () => [
 					{
-						opacity: [0],
+						opacity: [ 0 ],
 						timing: { duration: 400 }
 					},
 					{
-						width: [0],
+						width: [ 0 ],
 						timing: { duration: 400 }
 					}
-				]}
+				] }
 			>
-				{nodes => (
+				{ nodes => (
 					<>
-						{nodes.map(({ key, data, state }) => {
+						{ nodes.map(({ key, data, state }) => {
 							const { opacity, width } = state;
 							const widthString = `${width}px`;
 
 							return (
 								<img
-									style={{ opacity, width: widthString }}
-									key={key}
-									src={data.src}
+									style={ { opacity, width: widthString } }
+									key={ key }
+									src={ data.src }
 									alt='Kitty Pic'
-									onClick={e => cacheKittyPic(data)}
+									onClick={ e => cacheKittyPic(data) }
 								/>
 							);
-						})}
+						}) }
 					</>
-				)}
+				) }
 			</NodeGroup>
 		</div>
 	);
@@ -291,55 +313,55 @@ function BottomCards(props) {
 	return (
 		<div className='bottomCards'>
 			<NodeGroup
-				data={reversedKittyCache}
-				keyAccessor={d => d.id}
-				start={() => ({
+				data={ reversedKittyCache }
+				keyAccessor={ d => d.id }
+				start={ () => ({
 					opacity: 0,
 					width: 0
-				})}
-				enter={d => [
+				}) }
+				enter={ d => [
 					{
-						opacity: [1],
+						opacity: [ 1 ],
 						timing: { duration: 400, delay: 150 }
 					},
 					{
-						width: [306],
+						width: [ 306 ],
 						timing: { duration: 400 }
 					}
-				]}
-				update={d => [
+				] }
+				update={ d => [
 					{
-						width: [306],
+						width: [ 306 ],
 						timing: { duration: 150 }
 					}
-				]}
-				leave={() => [
+				] }
+				leave={ () => [
 					{
-						opacity: [0],
+						opacity: [ 0 ],
 						timing: { duration: 400 }
 					},
 					{
-						width: [0],
+						width: [ 0 ],
 						timing: { duration: 400 }
 					}
-				]}
+				] }
 			>
-				{nodes => (
+				{ nodes => (
 					<>
-						{nodes.map(({ key, data, state }) => {
+						{ nodes.map(({ key, data, state }) => {
 							const { opacity, width } = state;
 							const widthString = `${width}px`;
 							return (
 								<img
-									style={{ opacity, width: widthString }}
-									key={key}
-									src={data.src}
+									style={ { opacity, width: widthString } }
+									key={ key }
+									src={ data.src }
 									alt='Kitty Cache Pic'
 								/>
 							);
-						})}
+						}) }
 					</>
-				)}
+				) }
 			</NodeGroup>
 		</div>
 	);
