@@ -260,13 +260,13 @@ function TopCards(props) {
 						timing: { duration: 400, delay: 150 }
 					},
 					{
-						width: [ 306 ],
+						width: [ 14 ],
 						timing: { duration: 400 }
 					}
 				] }
 				update={ d => [
 					{
-						width: [ 306 ],
+						width: [ 14 ],
 						timing: { duration: 150 }
 					}
 				] }
@@ -285,7 +285,7 @@ function TopCards(props) {
 					<>
 						{ nodes.map(({ key, data, state }) => {
 							const { opacity, width } = state;
-							const widthString = `${width}px`;
+							const widthString = `${width}vw`;
 
 							return (
 								<img
@@ -325,13 +325,13 @@ function BottomCards(props) {
 						timing: { duration: 400, delay: 150 }
 					},
 					{
-						width: [ 306 ],
+						width: [ 14 ],
 						timing: { duration: 400 }
 					}
 				] }
 				update={ d => [
 					{
-						width: [ 306 ],
+						width: [ 14 ],
 						timing: { duration: 150 }
 					}
 				] }
@@ -350,7 +350,7 @@ function BottomCards(props) {
 					<>
 						{ nodes.map(({ key, data, state }) => {
 							const { opacity, width } = state;
-							const widthString = `${width}px`;
+							const widthString = `${width}vw`;
 							return (
 								<img
 									style={ { opacity, width: widthString } }

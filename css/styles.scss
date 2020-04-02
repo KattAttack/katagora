@@ -1355,8 +1355,7 @@ img.resize {
 	align-items: center;
 	height: auto;
 	overflow: hidden;
-	width: 99vw;
-	height: 98.3vh;
+	
 	h1 {
 		background-color: #abffa3;
 		padding-right: 10px;
@@ -1407,17 +1406,17 @@ img.resize {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
-			margin-left: 60px;
-			width: 100vw;
-			height: 260px;
+			margin-left: 40px;
+			width: 75vw;
+			height: 28vh;
 			border-radius: 10px;
 			background-image: linear-gradient(to right, #5d5c69, #4c4c59);
 
 			img {
 				align-self: center;
 				border-radius: 10px;
-				margin-left: 10px;
-				margin-right: 10px;
+				margin-left: .5vw;
+				margin-right: .5vw;
 				width: auto;
 				height: 90%;
 				cursor: pointer;
@@ -1477,17 +1476,17 @@ img.resize {
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
-			margin-left: 60px;
-			width: 100vw;
-			height: 260px;
+			margin-left: 40px;
+			width: 75vw;
+			height: 28vh;
 			border-radius: 10px;
 			background-color: #30303b;
 
 			img {
 				align-self: center;
 				border-radius: 10px;
-				margin-left: 10px;
-				margin-right: 10px;
+				margin-left: .5vw;
+				margin-right: .5vw;
 				width: auto;
 				height: 90%;
 			}
