@@ -2,7 +2,7 @@ import React from "react";
 import "../css/styles.scss";
 
 export class About extends React.Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = { showMe: false, showRel: false, showGoals: false, showInfo: false };
 		this.dropdownShow = this.dropdownShow.bind(this);
@@ -54,25 +54,25 @@ export class About extends React.Component {
 			<div className='aboutContainer'>
 				<div className='dropdownMe'>
 					<span
-						onMouseEnter={() => {
+						onMouseEnter={ () => {
 							this.dropdownShow("Me");
-						}}
-						onMouseLeave={() => {
+						} }
+						onMouseLeave={ () => {
 							this.dropdownHide("Me");
-						}}
+						} }
 					>
 						Katrina Kozorezov
 					</span>
 
-					<div className='boxMe' style={{ maxHeight: this.state.showMe ? 500 : 0 }}>
+					<div className='boxMe' style={ { maxHeight: this.state.showMe ? 500 : 0 } }>
 						<div
 							id='Me'
-							onMouseEnter={() => {
+							onMouseEnter={ () => {
 								this.dropdownShow("Me");
-							}}
-							onMouseLeave={() => {
+							} }
+							onMouseLeave={ () => {
 								this.dropdownHide("Me");
-							}}
+							} }
 							className='aboutMeText'
 						>
 							<div className='A1'>My relationship with identity is complicated</div>
@@ -99,24 +99,24 @@ export class About extends React.Component {
 
 				<div className='dropdownRel'>
 					<span
-						onMouseEnter={() => {
+						onMouseEnter={ () => {
 							this.dropdownShow("Rel");
-						}}
-						onMouseLeave={() => {
+						} }
+						onMouseLeave={ () => {
 							this.dropdownHide("Rel");
-						}}
+						} }
 					>
 						Religion
 					</span>
-					<div className='boxRel' style={{ maxHeight: this.state.showRel ? 500 : 0 }}>
+					<div className='boxRel' style={ { maxHeight: this.state.showRel ? 500 : 0 } }>
 						<div
 							id='Rel'
-							onMouseEnter={() => {
+							onMouseEnter={ () => {
 								this.dropdownShow("Rel");
-							}}
-							onMouseLeave={() => {
+							} }
+							onMouseLeave={ () => {
 								this.dropdownHide("Rel");
-							}}
+							} }
 							className='aboutRelText'
 						>
 							<div className='A1'>More on this coming soon</div>
@@ -127,29 +127,29 @@ export class About extends React.Component {
 
 				<div className='dropdownGoals'>
 					<span
-						onMouseEnter={() => {
+						onMouseEnter={ () => {
 							this.dropdownShow("Goals");
-						}}
-						onMouseLeave={() => {
+						} }
+						onMouseLeave={ () => {
 							this.dropdownHide("Goals");
-						}}
+						} }
 					>
 						Goals
 					</span>
-					<div className='boxGoals' style={{ maxHeight: this.state.showGoals ? 500 : 0 }}>
+					<div className='boxGoals' style={ { maxHeight: this.state.showGoals ? 500 : 0 } }>
 						<div
 							id='Goals'
-							onMouseEnter={() => {
+							onMouseEnter={ () => {
 								this.dropdownShow("Goals");
-							}}
-							onMouseLeave={() => {
+							} }
+							onMouseLeave={ () => {
 								this.dropdownHide("Goals");
-							}}
+							} }
 							className='aboutGoalsText'
 						>
 							<div className='A1'>I hope to achieve many things</div>
 							<div className='A2'>
-								Get a job, visit Athens, repaint my car, create a coffee table book,
+								Find my next coding adventure, learn React Native and MongoDB, visit Athens, repaint my car, create a coffee table book,
 								design my own fashion line/accessories, write a collection of
 								nonfiction shorts...
 							</div>
@@ -159,24 +159,24 @@ export class About extends React.Component {
 
 				<div className='dropdownInfo'>
 					<span
-						onMouseEnter={() => {
+						onMouseEnter={ () => {
 							this.dropdownShow("Info");
-						}}
-						onMouseLeave={() => {
+						} }
+						onMouseLeave={ () => {
 							this.dropdownHide("Info");
-						}}
+						} }
 					>
 						Info
 					</span>
-					<div className='boxInfo' style={{ maxHeight: this.state.showInfo ? 500 : 0 }}>
+					<div className='boxInfo' style={ { maxHeight: this.state.showInfo ? 500 : 0 } }>
 						<div
 							id='Info'
-							onMouseEnter={() => {
+							onMouseEnter={ () => {
 								this.dropdownShow("Info");
-							}}
-							onMouseLeave={() => {
+							} }
+							onMouseLeave={ () => {
 								this.dropdownHide("Info");
-							}}
+							} }
 							className='aboutInfoText'
 						>
 							<div className='A1'>Where you can see more of me</div>

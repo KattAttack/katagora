@@ -35,8 +35,9 @@ export class Portfolio extends React.Component {
 	}
 
 	topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		// document.body.scrollTop = 0;
+		// document.documentElement.scrollTop = 0;
 	}
 
 	openInNewTab(url) {
@@ -48,7 +49,9 @@ export class Portfolio extends React.Component {
 		// window.onscroll = function () { this.scrollFunction() };
 		return (
 			<>
-				<button onClick={ this.topFunction } id="myBtn" className="scrollTopArrow" title="Go to top">Top</button>
+
+				<img src="venusShell.png" onClick={ this.topFunction } id="myBtn" className="scrollTopLeaf" title="Go to top"></img>
+
 				<div className='portfolioContainer' onScroll={ this.scrollFunction }>
 					<div className='fancyHeader'>ﾟ･:*✧.･ WELCOME to my PORTFOLIO ･.✧*:･ﾟ</div>
 
@@ -87,13 +90,6 @@ export class Portfolio extends React.Component {
 							<div className='fancyHeader'>APPS</div>
 							<div className="appsImages">
 								<div className='imageContainer'>
-									<img
-										src='portfolio/shapes.png'
-										alt='Shapes Game'
-										onClick={ () => {
-											this.openInNewTab(`${HOST}shapes`);
-										} }
-									/>
 									<div className='links'>
 										<div
 											className='gameTitle'
@@ -102,22 +98,27 @@ export class Portfolio extends React.Component {
 											} }
 										>
 											Shapes Game
-								</div>
+										</div>
+									</div>
+
+									<img
+										src='portfolio/shapes.png'
+										alt='Shapes Game'
+										onClick={ () => {
+											this.openInNewTab(`${HOST}shapes`);
+										} }
+									/>
+									<div className='techUsed'>(JavaScript, React, SCSS, AWS, Git)</div>
+									<div className='links'>
+
+
 										<a href='https://github.com/KattAttack/shapesGame' target='_blank'>
 											GitHub Repository
-								</a>
+										</a>
 									</div>
 								</div>
 
 								<div className='imageContainer'>
-									<img
-										src='portfolio/kitties.png'
-										alt='Kitty Cards'
-										onClick={ () => {
-											this.openInNewTab(`${HOST}kittyCards`);
-										} }
-									/>
-
 									<div className='links'>
 										<div
 											className='gameTitle'
@@ -126,22 +127,25 @@ export class Portfolio extends React.Component {
 											} }
 										>
 											Kitty Cards
-								</div>
-
+										</div>
+									</div>
+									<img
+										src='portfolio/kitties.png'
+										alt='Kitty Cards'
+										onClick={ () => {
+											this.openInNewTab(`${HOST}kittyCards`);
+										} }
+									/>
+									<div className='techUsed'>(JavaScript, React, ReactMove, SCSS, AWS, Git)
+									</div>
+									<div className='links'>
 										<a href='https://github.com/KattAttack/kittyCards' target='_blank'>
 											GitHub Repository
-								</a>
+										</a>
 									</div>
 								</div>
 
 								<div className='imageContainer'>
-									<img
-										src='portfolio/tictactoe.png'
-										alt='Tictactoe Game'
-										onClick={ () => {
-											this.openInNewTab(`${HOST}tictactoe`);
-										} }
-									/>
 									<div className='links'>
 										<div
 											className='gameTitle'
@@ -150,10 +154,20 @@ export class Portfolio extends React.Component {
 											} }
 										>
 											Tictactoe Game
-							</div>
+										</div>
+									</div>
+									<img
+										src='portfolio/tictactoe.png'
+										alt='Tictactoe Game'
+										onClick={ () => {
+											this.openInNewTab(`${HOST}tictactoe`);
+										} }
+									/>
+									<div className='techUsed'>(JavaScript, React, SCSS, AWS, Git)</div>
+									<div className='links'>
 										<a href='' target='_blank'>
 											GitHub Repository
-							</a>
+										</a>
 									</div>
 								</div>
 							</div>
