@@ -94,26 +94,26 @@ export class Portfolio extends React.Component {
 										<div
 											className='gameTitle'
 											onClick={ () => {
-												this.openInNewTab(`${HOST}shapes`);
+												this.openInNewTab("www.voterankchoice.com");
 											} }
 										>
-											Shapes Game
+											Ranked Choice
 										</div>
 									</div>
 
 									<img
-										src='portfolio/shapes.png'
-										alt='Shapes Game'
+										src='portfolio/rankedChoice.png'
+										alt='Ranked Choice'
 										onClick={ () => {
-											this.openInNewTab(`${HOST}shapes`);
+											this.openInNewTab("www.voterankchoice.com");
 										} }
 									/>
-									<div className='techUsed'>(JavaScript, React, SCSS, AWS, Git)</div>
+									<div className='techUsed'>(JavaScript, React, React Move, Styled Components, Node, Git)</div>
 									<div className='links'>
 
 
-										<a href='https://github.com/KattAttack/shapesGame' target='_blank'>
-											GitHub Repository
+										<a style={ { color: "#cc5500" } } target='_blank'>
+											In Development
 										</a>
 									</div>
 								</div>
@@ -140,6 +140,35 @@ export class Portfolio extends React.Component {
 									</div>
 									<div className='links'>
 										<a href='https://github.com/KattAttack/kittyCards' target='_blank'>
+											GitHub Repository
+										</a>
+									</div>
+								</div>
+
+								<div className='imageContainer'>
+									<div className='links'>
+										<div
+											className='gameTitle'
+											onClick={ () => {
+												this.openInNewTab(`${HOST}shapes`);
+											} }
+										>
+											Shapes Game
+										</div>
+									</div>
+
+									<img
+										src='portfolio/shapes.png'
+										alt='Shapes Game'
+										onClick={ () => {
+											this.openInNewTab(`${HOST}shapes`);
+										} }
+									/>
+									<div className='techUsed'>(JavaScript, React, SCSS, AWS, Git)</div>
+									<div className='links'>
+
+
+										<a href='https://github.com/KattAttack/shapesGame' target='_blank'>
 											GitHub Repository
 										</a>
 									</div>
