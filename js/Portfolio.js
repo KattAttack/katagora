@@ -94,7 +94,7 @@ export class Portfolio extends React.Component {
 										<div
 											className='gameTitle'
 											onClick={ () => {
-												this.openInNewTab("www.voterankchoice.com");
+												this.openInNewTab("http://www.voterankchoice.com");
 											} }
 										>
 											Ranked Choice
