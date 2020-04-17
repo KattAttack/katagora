@@ -105,7 +105,7 @@ export class Portfolio extends React.Component {
 										src='portfolio/rankedChoice.png'
 										alt='Ranked Choice'
 										onClick={ () => {
-											this.openInNewTab("www.voterankchoice.com");
+											this.openInNewTab("http://www.voterankchoice.com");
 										} }
 									/>
 									<div className='techUsed'>(JavaScript, React, React Move, Styled Components, Node, Git)</div>
