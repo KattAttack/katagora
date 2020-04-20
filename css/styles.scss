@@ -16,6 +16,7 @@
 
 		.mobileContainer {
 			flex-direction: column;
+			width: 100vw;
 
 			.titleBackground {
 				display: flex;
@@ -72,7 +73,7 @@
 		.fancyHeader {
 			-webkit-text-stroke-width: .5px;
 			margin: 10px auto 20px auto;
-			font-size: 4.75vw;
+			font-size: 4.65vw;
 		}
 
 		.portfolioContainer{
