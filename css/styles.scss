@@ -72,7 +72,7 @@
 		.fancyHeader {
 			-webkit-text-stroke-width: .5px;
 			margin-bottom: 20px;
-			font-size: 4.2vw;
+			font-size: 4.33vw;
 		}
 
 		.workContentContainer {
@@ -83,8 +83,15 @@
 			margin-bottom: 2%;
 
 			.menu {
-				font-size: 2.5vw;
+				font-size: 3vw;
 				padding: 5.2px 7px 5px 7px;
+
+				-webkit-touch-callout: none; 
+				-webkit-user-select: none; 
+				-khtml-user-select: none; 
+				-moz-user-select: none; 
+				-ms-user-select: none; 
+				user-select: none;
 			}
 		}	
 
@@ -96,15 +103,15 @@
 		}
 
 		p {
-			font-size: 2.5vw;
+			font-size: 2.8vw;
 		}
 
 		.gameTitle{
-			font-size: 3vw;
+			font-size: 3.8vw;
 		}
 
 		.techUsed {
-			font-size: 2.5vw;
+			font-size: 3.3vw;
 		}
 
 		.links {
@@ -114,7 +121,7 @@
 			margin-left: 0; 
 
 			a {
-				font-size: 2.3vw;
+				font-size: 3vw;
 			}
 		}
 	}
