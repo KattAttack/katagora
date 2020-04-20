@@ -9,7 +9,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 
 module.exports = env => {
 	return {
-		entry: [ "babel-polyfill", path.resolve(__dirname, "./js/app.js") ],
+		entry: [ "babel-polyfill", path.resolve(__dirname, "./js/app.js"), path.resolve(__dirname, "./js/mobile/app.js") ],
 		output: {
 			path: path.resolve(__dirname, "./dist"),
 			filename: "bundle.js"

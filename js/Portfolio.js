@@ -50,7 +50,7 @@ export class Portfolio extends React.Component {
 		return (
 			<>
 
-				<img src="venusShell.png" onClick={ this.topFunction } id="myBtn" className="scrollTopLeaf" title="Go to top"></img>
+				<img src="venusShell.png" onClick={ this.topFunction } id="myBtn" className="scrollTopVenus" title="Go to top"></img>
 
 				<div className='portfolioContainer' onScroll={ this.scrollFunction }>
 					<div className='fancyHeader'>ﾟ･:*✧.･ WELCOME to my PORTFOLIO ･.✧*:･ﾟ</div>

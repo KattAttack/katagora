@@ -92,7 +92,6 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		// this.setState({ blogTextContainer: this.loadWelcome });
 
 		//Path funcs & switches
 
@@ -355,5 +354,5 @@ class App extends React.Component {
 	}
 }
 
-const rootElement = document.getElementById("App");
+const rootElement = document.getElementById("Desktop");
 ReactDOM.render(<App />, rootElement);

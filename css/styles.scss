@@ -1,22 +1,115 @@
-
-
-// .katagoraBody {
-// 	background: #ffacb3;
-// 	position: absolute;
-// 	z-index: -3;
-// 	width: 99.1vw;
-// 	height: 90vw;
-// }
-
-// .App {
-// 	display: flex;
-// 	flex-direction: row;
-// 	width: 100%;
-// 	height: 100%;
-// }
-
 .body {
 	background: #ffacb3;
+}
+#Desktop {
+	@media(max-width: 768px){
+		display: none;
+	}
+}
+
+#Mobile {
+	display: none;
+
+
+	@media(max-width: 768px){
+		display: flex;
+
+		.mobileContainer {
+			flex-direction: column;
+
+			.titleBackground {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin: 0;
+				padding-bottom: 1.12%;
+				z-index: 1;
+				align-self: center;
+				width: 100%;
+
+				.titleShadow{
+					width: fit-content;
+					height: auto;
+
+					.title{
+						letter-spacing: -2px;
+						font-size: 7.5vw;
+						width: auto;
+    					height: auto;
+					}
+
+					
+				}
+
+				.leafLine{
+					margin: 10.7% 0px 0px 0px;
+				}
+			}
+
+			.quote {
+				width: auto;
+			}
+
+		}
+
+		.titleOver {
+			font-size: 7.5vw;
+			letter-spacing: -2px;
+			text-shadow: 0px 0px 5px #fffff7, 0px 0px 7px #fffff7;
+			animation: blurOver 1s ease-out;
+			-webkit-animation: blurOver 1s ease-out;
+			width: auto;
+			height: auto;
+		}
+
+		.fancyHeader {
+			-webkit-text-stroke-width: .5px;
+			font-size: 3.2vw;
+		}
+
+		.workContentContainer {
+			margin-top: 5px;
+		}
+
+		.scrollMenu {
+			margin-bottom: 2%;
+
+			.menu {
+				font-size: 1.98vw;
+				padding: 3px 6px 5px 6px;
+			}
+		}	
+
+		.scrollTopVenus {
+			left: 85.75%;
+			padding: 0;
+			height: auto;
+			width: 15.5%;
+		}
+
+		p {
+			font-size: 1.9vw;
+		}
+
+		.gameTitle{
+			font-size: 2.52vw;
+		}
+
+		.techUsed {
+			font-size: 2vw;
+		}
+
+		.links {
+			display: flex;
+			flex-direction: column;
+			width: 100%; 
+			margin-left: 0; 
+
+			a {
+				font-size: 2vw;
+			}
+		}
+	}
 }
 
 .bodyApp {
@@ -809,7 +902,9 @@ img.resize {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		margin: -14px auto 30px 100px;
+		margin-top: -14px;
+    	margin-bottom: 3%;
+		// margin: -14px auto 30px 100px;
 		// margin-left: 12%;
 		// margin-right: 8%;
 		// margin-bottom: 20px;
@@ -860,33 +955,33 @@ img.resize {
 	}
 }
 
-.scrollTopLeaf {
+.scrollTopVenus {
 	display: none;
 	position: fixed;
 	bottom: 20px;
-	right: 38px;
+	right: 2%;
 	z-index: 4;
 	// width: 7vw;
 	// height: 18vh;
 	// width: 6vw;
     height: 14vh;
-	border: none;
+	
 	outline: none;
 	color: white;
 	cursor: pointer;
 	padding: 15px;
-	border-radius: 4px;
-	// transform: rotate(245deg);
-	// transform: rotate(321deg);
 
   .scrollTopArrow:hover {
 	background-color: #555;
   }
 }
 
+
+
 .workContentContainer {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: space-between;
 	margin-top: 20px;
 	background-color: #fcffe6af;
