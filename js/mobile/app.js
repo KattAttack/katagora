@@ -49,7 +49,7 @@ class App extends React.Component {
 							in the city.{ " " }
 					</p>
 				</div>
-				<div className='blogContainer' style={ { width: "74%", marginLeft: "13%" } }>
+				<div className='blogContainer' style={ { width: "100%" } }>
 					<Portfolio />
 				</div>
 
