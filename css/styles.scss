@@ -71,8 +71,12 @@
 
 		.fancyHeader {
 			-webkit-text-stroke-width: .5px;
-			margin-bottom: 20px;
-			font-size: 4.33vw;
+			margin: 10px auto 20px auto;
+			font-size: 4.75vw;
+		}
+
+		.portfolioContainer{
+			width: 100%;
 		}
 
 		.workContentContainer {
@@ -81,6 +85,13 @@
 
 		.scrollMenu {
 			margin-bottom: 2%;
+
+			-webkit-touch-callout: none; 
+			-webkit-user-select: none; 
+			-khtml-user-select: none; 
+			-moz-user-select: none; 
+			-ms-user-select: none; 
+			user-select: none;
 
 			.menu {
 				font-size: 3vw;
@@ -103,7 +114,7 @@
 		}
 
 		p {
-			font-size: 2.8vw;
+			font-size: 2.95vw;
 		}
 
 		.gameTitle{

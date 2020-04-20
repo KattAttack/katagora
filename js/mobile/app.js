@@ -11,6 +11,8 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
+		let welcomeTitle = document.getElementById("welcomeTitle");
+		welcomeTitle.innerHTML = "ﾟ･:*✧.･WELCOME to my PORTFOLIO･.✧*:･ﾟ";
 
 	}
 
@@ -26,8 +28,7 @@ class App extends React.Component {
 
 
 	render() {
-		let mobileTitle = document.getElementById("title");
-		mobileTitle.className = "titleOver";
+
 
 		return (
 			<div className="mobileContainer">
@@ -49,7 +50,7 @@ class App extends React.Component {
 							in the city.{ " " }
 					</p>
 				</div>
-				<div className='blogContainer' style={ { width: "100%" } }>
+				<div className='blogContainer' style={ { width: "99%" } }>
 					<Portfolio />
 				</div>
 
