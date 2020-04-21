@@ -19,13 +19,17 @@ class App extends React.Component {
 	}
 
 	loadWelcome() {
+		let url;
 		if (HOST === "http://www.katagora.com/") {
 			if (!window.location.href.includes("www")) {
 				history.replaceState(null, "", "http://katagora.com")
-			} else history.replaceState(null, "", HOST);
+				url = "http://katagora.com";
+			} else {
+				history.replaceState(null, "", HOST);
+				url = HOST;
+			}
 
 		}
-		const url = HOST;
 		console.log("URL", url);
 		console.log("history", history);
 		history.pushState(null, "", url);
