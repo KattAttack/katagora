@@ -18,7 +18,7 @@ class App extends React.Component {
 		this.menuHide = this.menuHide.bind(this);
 	}
 
-	loadWelcome() {
+	getHostUrl() {
 		let url;
 		if (HOST === "http://www.katagora.com/") {
 			if (!window.location.href.includes("www")) {
@@ -30,6 +30,11 @@ class App extends React.Component {
 			}
 
 		}
+		return url;
+	}
+
+	loadWelcome() {
+		const url = getHostUrl()
 		console.log("URL", url);
 		console.log("history", history);
 		history.pushState(null, "", url);
@@ -40,7 +45,7 @@ class App extends React.Component {
 	}
 
 	loadAbout() {
-		const url = `${HOST}about`;
+		const url = `${getHostUrl()}about`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -49,7 +54,7 @@ class App extends React.Component {
 	}
 
 	loadPortfolio() {
-		const url = `${HOST}portfolio`;
+		const url = `${getHostUrl()}portfolio`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -58,7 +63,7 @@ class App extends React.Component {
 	}
 
 	loadShapes() {
-		const url = `${HOST}shapes`;
+		const url = `${getHostUrl()}shapes`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -67,7 +72,7 @@ class App extends React.Component {
 	}
 
 	loadKittyCards() {
-		const url = `${HOST}kittyCards`;
+		const url = `${getHostUrl()}kittyCards`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -76,7 +81,7 @@ class App extends React.Component {
 	}
 
 	loadTictactoe() {
-		const url = `${HOST}tictactoe`;
+		const url = `${getHostUrl()}tictactoe`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
