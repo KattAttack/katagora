@@ -3,6 +3,11 @@ const app = express();
 const path = require("path");
 
 // create a GET route
+
+app.get("katagora.com", (req, res) => {
+	res.redirect("http://www.katagora.com")
+})
+
 app.get("/", (req, res) => {
 	res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });

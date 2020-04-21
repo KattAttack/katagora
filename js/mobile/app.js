@@ -12,7 +12,8 @@ class App extends React.Component {
 
 	componentDidMount() {
 		let welcomeTitle = document.getElementById("welcomeTitle");
-		welcomeTitle.innerHTML = "ﾟ･:*✧.･WELCOME to my PORTFOLIO･.✧*:･ﾟ";
+		welcomeTitle.innerHTML = "✧.･WELCOME to my PORTFOLIO･.✧";
+		welcomeTitle.style.paddingLeft = "0p"
 
 	}
 
