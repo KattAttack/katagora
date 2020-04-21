@@ -5,7 +5,7 @@ const path = require("path");
 // create a GET route
 
 app.get("katagora.com", (req, res) => {
-	res.redirect("http://www.katagora.com")
+	res.redirect("www.katagora.com")
 })
 
 app.get("/", (req, res) => {
