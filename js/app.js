@@ -20,7 +20,10 @@ class App extends React.Component {
 
 	loadWelcome() {
 		if (HOST === "http://www.katagora.com/") {
-			history.replaceState(null, "", HOST);
+			if (!window.location.href.includes("www")) {
+				history.replaceState(null, "", "http://katagora.com")
+			} else history.replaceState(null, "", HOST);
+
 		}
 		const url = HOST;
 		console.log("URL", url);
