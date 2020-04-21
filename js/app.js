@@ -34,7 +34,7 @@ class App extends React.Component {
 	}
 
 	loadWelcome() {
-		const url = getHostUrl()
+		const url = this.getHostUrl()
 		console.log("URL", url);
 		console.log("history", history);
 		history.pushState(null, "", url);
@@ -45,7 +45,7 @@ class App extends React.Component {
 	}
 
 	loadAbout() {
-		const url = `${getHostUrl()}about`;
+		const url = `${this.getHostUrl()}about`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -54,7 +54,7 @@ class App extends React.Component {
 	}
 
 	loadPortfolio() {
-		const url = `${getHostUrl()}portfolio`;
+		const url = `${this.getHostUrl()}portfolio`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -63,7 +63,7 @@ class App extends React.Component {
 	}
 
 	loadShapes() {
-		const url = `${getHostUrl()}shapes`;
+		const url = `${this.getHostUrl()}shapes`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -72,7 +72,7 @@ class App extends React.Component {
 	}
 
 	loadKittyCards() {
-		const url = `${getHostUrl()}kittyCards`;
+		const url = `${this.getHostUrl()}kittyCards`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
@@ -81,7 +81,7 @@ class App extends React.Component {
 	}
 
 	loadTictactoe() {
-		const url = `${getHostUrl()}tictactoe`;
+		const url = `${this.getHostUrl()}tictactoe`;
 		history.pushState(null, "", url);
 		this.setState({
 			url,
