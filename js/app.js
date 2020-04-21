@@ -22,8 +22,8 @@ class App extends React.Component {
 		let url;
 		if (HOST === "http://www.katagora.com/") {
 			if (!window.location.href.includes("www")) {
-				history.replaceState(null, "", "http://katagora.com")
-				url = "http://katagora.com";
+				history.replaceState(null, "", "http://katagora.com/")
+				url = "http://katagora.com/";
 			} else {
 				history.replaceState(null, "", HOST);
 				url = HOST;
