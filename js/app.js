@@ -14,6 +14,7 @@ class App extends React.Component {
 		this.loadShapes = this.loadShapes.bind(this);
 		this.loadKittyCards = this.loadKittyCards.bind(this);
 		this.loadTictactoe = this.loadTictactoe.bind(this);
+		this.loadMazeGame = this.loadMazeGame.bind(this);
 		this.menuShow = this.menuShow.bind(this);
 		this.menuHide = this.menuHide.bind(this);
 	}
@@ -89,6 +90,15 @@ class App extends React.Component {
 		});
 	}
 
+	loadMazeGame() {
+		const url = `${this.getHostUrl()}mazeGame`;
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "mazeGame"
+		});
+	}
+
 	menuShow() {
 		this.setState({
 			showMenu: true,
@@ -128,6 +138,10 @@ class App extends React.Component {
 
 			case "/tictactoe":
 				this.loadTictactoe();
+				break;
+
+			case "/mazeGame":
+				this.loadMazeGame();
 				break;
 
 			case "/":
@@ -210,6 +224,9 @@ class App extends React.Component {
 			return <ShapesGame />;
 		}
 		if (this.state.page === "kittyCards") {
+			return <Router page={ this.state.page } />;
+		}
+		if (this.state.page === "mazeGame") {
 			return <Router page={ this.state.page } />;
 		}
 		return (
