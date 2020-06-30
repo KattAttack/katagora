@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/styles.scss";
-import { CoverLetter } from "./CoverLetter"
+import { CoverLetter } from "./CoverLetter";
 
 export class Portfolio extends React.Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = {};
 		this.openInNewTab = this.openInNewTab.bind(this);
@@ -14,19 +14,19 @@ export class Portfolio extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('scroll', this.scrollFunction);
+		window.addEventListener("scroll", this.scrollFunction);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.scrollFunction);
+		window.removeEventListener("scroll", this.scrollFunction);
 	}
 
-	scrollToMyRef = (numb) => this.myRefs[ numb ].scrollIntoView({ behavior: 'smooth' });
+	scrollToMyRef = (numb) => this.myRefs[numb].scrollIntoView({ behavior: "smooth" });
 
 	scrollFunction() {
-		console.log("scrolling")
+		console.log("scrolling");
 		var mybutton = document.getElementById("myBtn");
-		console.log("scrollTop", document.body.scrollTop)
+		console.log("scrollTop", document.body.scrollTop);
 		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 			mybutton.style.display = "block";
 		} else {
@@ -35,7 +35,7 @@ export class Portfolio extends React.Component {
 	}
 
 	topFunction() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+		window.scrollTo({ top: 0, behavior: "smooth" });
 		// document.body.scrollTop = 0;
 		// document.documentElement.scrollTop = 0;
 	}
@@ -49,53 +49,78 @@ export class Portfolio extends React.Component {
 		// window.onscroll = function () { this.scrollFunction() };
 		return (
 			<>
+				<img
+					src='venusShell.png'
+					onClick={this.topFunction}
+					id='myBtn'
+					className='scrollTopVenus'
+					title='Go to top'
+				></img>
 
-				<img src="venusShell.png" onClick={ this.topFunction } id="myBtn" className="scrollTopVenus" title="Go to top"></img>
+				<div className='portfolioContainer' onScroll={this.scrollFunction}>
+					<div className='fancyHeader' id='welcomeTitle'>
+						ﾟ･:*✧.･ WELCOME to my PORTFOLIO ･.✧*:･ﾟ
+					</div>
 
-				<div className='portfolioContainer' onScroll={ this.scrollFunction }>
-					<div className='fancyHeader' id="welcomeTitle">ﾟ･:*✧.･ WELCOME to my PORTFOLIO ･.✧*:･ﾟ</div>
-
-					<div className="workContentContainer">
-						<div className="scrollMenu">
-							<div className="menu" onClick={ () => {
-								this.scrollToMyRef(0)
-								// this.myDivToFocus.current.scrollIntoView({ behavior: 'smooth' });
-							} }>
+					<div className='workContentContainer'>
+						<div className='scrollMenu'>
+							<div
+								className='menu'
+								onClick={() => {
+									this.scrollToMyRef(0);
+									// this.myDivToFocus.current.scrollIntoView({ behavior: 'smooth' });
+								}}
+							>
 								Resume
-					</div>
-							<div className="menu" onClick={ () => {
-								this.scrollToMyRef(1)
-								// this.myDivToFocus.current.scrollIntoView({ behavior: 'smooth' });
-							} }>
+							</div>
+							<div
+								className='menu'
+								onClick={() => {
+									this.scrollToMyRef(1);
+									// this.myDivToFocus.current.scrollIntoView({ behavior: 'smooth' });
+								}}
+							>
 								Apps
-					</div>
-							<div className="menu" onClick={ () => {
-								this.scrollToMyRef(2)
-								// this.myDivToFocus.current.scrollIntoView({ behavior: 'smooth' });
-							} }>
+							</div>
+							<div
+								className='menu'
+								onClick={() => {
+									this.scrollToMyRef(2);
+									// this.myDivToFocus.current.scrollIntoView({ behavior: 'smooth' });
+								}}
+							>
 								Tutorials
-					</div>
+							</div>
 						</div>
-						<div className="coverLetterContainer">
+						<div className='coverLetterContainer'>
 							<CoverLetter />
 						</div>
 
-						<div className="resumeContainer" ref={ (ref) => { this.myRefs[ 0 ] = ref } }>
+						<div
+							className='resumeContainer'
+							ref={(ref) => {
+								this.myRefs[0] = ref;
+							}}
+						>
 							<div className='fancyHeader'>RESUME</div>
-							<iframe src="portfolio/Resume.pdf" width="96%" height="500px"></iframe>
+							<iframe src='portfolio/Resume.pdf' width='96%' height='500px'></iframe>
 						</div>
 
-
-						<div className="appsContainer" ref={ (ref) => { this.myRefs[ 1 ] = ref } }>
+						<div
+							className='appsContainer'
+							ref={(ref) => {
+								this.myRefs[1] = ref;
+							}}
+						>
 							<div className='fancyHeader'>APPS</div>
-							<div className="appsImages">
+							<div className='appsImages'>
 								<div className='imageContainer'>
 									<div className='links'>
 										<div
 											className='gameTitle'
-											onClick={ () => {
+											onClick={() => {
 												this.openInNewTab("http://www.voterankchoice.com");
-											} }
+											}}
 										>
 											Ranked Choice
 										</div>
@@ -104,16 +129,17 @@ export class Portfolio extends React.Component {
 									<img
 										src='portfolio/rankedChoice.png'
 										alt='Ranked Choice'
-										onClick={ () => {
+										onClick={() => {
 											this.openInNewTab("http://www.voterankchoice.com");
-										} }
+										}}
 									/>
-									<div className='techUsed'>(JavaScript, React, React Move, Styled Components, Node, Git)</div>
+									<div className='techUsed'>
+										(JavaScript, React, React Move, Styled Components, Node,
+										Git)
+									</div>
 									<div className='links'>
-
-
-										<a style={ { color: "#cc5500" } } target='_blank'>
-											In Development
+										<a style={{ color: "#cc5500" }} target='_blank'>
+											Under Development
 										</a>
 									</div>
 								</div>
@@ -122,9 +148,9 @@ export class Portfolio extends React.Component {
 									<div className='links'>
 										<div
 											className='gameTitle'
-											onClick={ () => {
+											onClick={() => {
 												this.openInNewTab(`${HOST}kittyCards`);
-											} }
+											}}
 										>
 											Kitty Cards
 										</div>
@@ -132,14 +158,18 @@ export class Portfolio extends React.Component {
 									<img
 										src='portfolio/kitties.png'
 										alt='Kitty Cards'
-										onClick={ () => {
+										onClick={() => {
 											this.openInNewTab(`${HOST}kittyCards`);
-										} }
+										}}
 									/>
-									<div className='techUsed'>(JavaScript, React, ReactMove, SCSS, AWS, Git)
+									<div className='techUsed'>
+										(JavaScript, React, ReactMove, SCSS, AWS, Git)
 									</div>
 									<div className='links'>
-										<a href='https://github.com/KattAttack/kittyCards' target='_blank'>
+										<a
+											href='https://github.com/KattAttack/kittyCards'
+											target='_blank'
+										>
 											GitHub Repository
 										</a>
 									</div>
@@ -149,9 +179,9 @@ export class Portfolio extends React.Component {
 									<div className='links'>
 										<div
 											className='gameTitle'
-											onClick={ () => {
+											onClick={() => {
 												this.openInNewTab(`${HOST}shapes`);
-											} }
+											}}
 										>
 											Shapes Game
 										</div>
@@ -160,15 +190,18 @@ export class Portfolio extends React.Component {
 									<img
 										src='portfolio/shapes.png'
 										alt='Shapes Game'
-										onClick={ () => {
+										onClick={() => {
 											this.openInNewTab(`${HOST}shapes`);
-										} }
+										}}
 									/>
-									<div className='techUsed'>(JavaScript, React, SCSS, AWS, Git)</div>
+									<div className='techUsed'>
+										(JavaScript, React, SCSS, AWS, Git)
+									</div>
 									<div className='links'>
-
-
-										<a href='https://github.com/KattAttack/shapesGame' target='_blank'>
+										<a
+											href='https://github.com/KattAttack/shapesGame'
+											target='_blank'
+										>
 											GitHub Repository
 										</a>
 									</div>
@@ -178,9 +211,9 @@ export class Portfolio extends React.Component {
 									<div className='links'>
 										<div
 											className='gameTitle'
-											onClick={ () => {
+											onClick={() => {
 												this.openInNewTab(`${HOST}tictactoe`);
-											} }
+											}}
 										>
 											Tictactoe Game
 										</div>
@@ -188,28 +221,62 @@ export class Portfolio extends React.Component {
 									<img
 										src='portfolio/tictactoe.png'
 										alt='Tictactoe Game'
-										onClick={ () => {
+										onClick={() => {
 											this.openInNewTab(`${HOST}tictactoe`);
-										} }
+										}}
 									/>
-									<div className='techUsed'>(JavaScript, React, SCSS, AWS, Git)</div>
+									<div className='techUsed'>
+										(JavaScript, React, SCSS, AWS, Git)
+									</div>
 									<div className='links'>
 										<a href='' target='_blank'>
 											GitHub Repository
 										</a>
 									</div>
 								</div>
+
+								<div className='imageContainer'>
+									<div className='links'>
+										<div
+											className='gameTitle'
+											onClick={() => {
+												this.openInNewTab(`${HOST}mazeGame`);
+											}}
+										>
+											Maze Game
+										</div>
+									</div>
+									<img
+										src='portfolio/maze.png'
+										alt='Maze Game'
+										onClick={() => {
+											this.openInNewTab(`${HOST}mazeGame`);
+										}}
+									/>
+									<div className='techUsed'>(JavaScript, React, Matter)</div>
+									<div className='links'>
+										<a style={{ color: "#cc5500" }} target='_blank'>
+											Under Development
+										</a>
+									</div>
+								</div>
 							</div>
-
 						</div>
-						<div className="tutorialsContainer" ref={ (ref) => { this.myRefs[ 2 ] = ref } }>
+						<div
+							className='tutorialsContainer'
+							ref={(ref) => {
+								this.myRefs[2] = ref;
+							}}
+						>
 							<div className='fancyHeader'>TUTORIALS</div>
-							<p> COMING SOON!!! For now, here's a cute picture of my cuddly kitties c:</p>
-							<img src="portfolio/lovelyKitties.jpg" ></img>
+							<p>
+								{" "}
+								COMING SOON!!! For now, here's a cute picture of my cuddly kitties
+								c:
+							</p>
+							<img src='portfolio/lovelyKitties.jpg'></img>
 						</div>
-
 					</div>
-
 				</div>
 			</>
 		);

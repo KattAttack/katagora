@@ -5,6 +5,7 @@ import { Portfolio } from "./Portfolio";
 import { ShapesGame } from "./shapes/src/components/ShapesGame";
 import { Tictactoe } from "./Tictactoe";
 import { KittyCards } from "./kittyCards/index";
+import { MazeGame } from "./mazeGame/index"
 
 export default function Router(props) {
 	switch (props.page) {
@@ -25,6 +26,9 @@ export default function Router(props) {
 
 		case "kittyCards":
 			return <KittyCards />;
+
+		case "mazeGame":
+			return <MazeGame />
 
 		default:
 			return <Welcome />;
