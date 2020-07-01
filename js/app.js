@@ -5,7 +5,7 @@ import Router from "./Router";
 import { ShapesGame } from "./shapes/src/components/ShapesGame";
 
 class App extends React.Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = { page: "", showGirl: false, showGram: false, showHouse: false };
 		this.loadWelcome = this.loadWelcome.bind(this);
@@ -21,27 +21,26 @@ class App extends React.Component {
 
 	getHostUrl() {
 		let url;
-		if (HOST === "http://www.katagora.com/") {
+		if (HOST === "https://www.katagora.com/") {
 			if (!window.location.href.includes("www")) {
-				history.replaceState(null, "", "http://katagora.com/")
-				url = "http://katagora.com/";
+				history.replaceState(null, "", "https://katagora.com/");
+				url = "https://katagora.com/";
 			} else {
 				history.replaceState(null, "", HOST);
 				url = HOST;
 			}
-
 		}
 		return url;
 	}
 
 	loadWelcome() {
-		const url = this.getHostUrl()
+		const url = this.getHostUrl();
 		console.log("URL", url);
 		console.log("history", history);
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "welcome"
+			page: "welcome",
 		});
 	}
 
@@ -50,7 +49,7 @@ class App extends React.Component {
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "about"
+			page: "about",
 		});
 	}
 
@@ -59,7 +58,7 @@ class App extends React.Component {
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "portfolio"
+			page: "portfolio",
 		});
 	}
 
@@ -68,7 +67,7 @@ class App extends React.Component {
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "shapes"
+			page: "shapes",
 		});
 	}
 
@@ -77,7 +76,7 @@ class App extends React.Component {
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "kittyCards"
+			page: "kittyCards",
 		});
 	}
 
@@ -86,7 +85,7 @@ class App extends React.Component {
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "tictactoe"
+			page: "tictactoe",
 		});
 	}
 
@@ -95,26 +94,25 @@ class App extends React.Component {
 		history.pushState(null, "", url);
 		this.setState({
 			url,
-			page: "mazeGame"
+			page: "mazeGame",
 		});
 	}
 
 	menuShow() {
 		this.setState({
 			showMenu: true,
-			showMoon: true
+			showMoon: true,
 		});
 	}
 
 	menuHide() {
 		this.setState({
 			showMenu: false,
-			showMoon: false
+			showMoon: false,
 		});
 	}
 
 	componentDidMount() {
-
 		//Path funcs & switches
 
 		var pathName = window.location.pathname;
@@ -155,11 +153,11 @@ class App extends React.Component {
 		//Title hover & click effects
 		const title = document.getElementById("title");
 		console.log("title", title);
-		title.addEventListener("mouseover", e => {
+		title.addEventListener("mouseover", (e) => {
 			title.className = "titleOver";
 		});
 
-		title.addEventListener("webkitAnimationEnd", e => {
+		title.addEventListener("webkitAnimationEnd", (e) => {
 			title.className = "title";
 		});
 
@@ -168,77 +166,76 @@ class App extends React.Component {
 		const girl = document.getElementById("girl");
 		var girlText = document.getElementById("girlText");
 
-		girl.addEventListener("mouseover", e => {
+		girl.addEventListener("mouseover", (e) => {
 			girlText.className = "typewriter";
 			this.setState({
-				showGirl: true
+				showGirl: true,
 			});
 		});
 
-		girl.addEventListener("mouseout", e => {
+		girl.addEventListener("mouseout", (e) => {
 			girlText.className = "hidden";
 			this.setState({
-				showGirl: false
+				showGirl: false,
 			});
 		});
 
 		const gramContainer = document.getElementById("gramContainer");
 		const gram = document.getElementById("gram");
 		var gramText = document.getElementById("gramText");
-		gram.addEventListener("mouseover", e => {
+		gram.addEventListener("mouseover", (e) => {
 			gramText.className = "typewriter";
 			this.setState({
-				showGram: true
+				showGram: true,
 			});
 		});
 
-		gram.addEventListener("mouseout", e => {
+		gram.addEventListener("mouseout", (e) => {
 			gramText.className = "hidden";
 			this.setState({
-				showGram: false
+				showGram: false,
 			});
 		});
 
 		const house = document.getElementById("house");
 		var houseText = document.getElementById("houseText");
-		house.addEventListener("mouseover", e => {
+		house.addEventListener("mouseover", (e) => {
 			houseText.className = "typewriter";
 			this.setState({
-				showHouse: true
+				showHouse: true,
 			});
 		});
 
-		house.addEventListener("mouseout", e => {
+		house.addEventListener("mouseout", (e) => {
 			houseText.className = "hidden";
 			this.setState({
-				showHouse: false
+				showHouse: false,
 			});
 		});
 	}
 
 	render() {
 		if (this.state.page === "tictactoe") {
-			return <Router page={ this.state.page } />;
+			return <Router page={this.state.page} />;
 		}
 		if (this.state.page === "shapes") {
 			return <ShapesGame />;
 		}
 		if (this.state.page === "kittyCards") {
-			return <Router page={ this.state.page } />;
+			return <Router page={this.state.page} />;
 		}
 		if (this.state.page === "mazeGame") {
-			return <Router page={ this.state.page } />;
+			return <Router page={this.state.page} />;
 		}
 		return (
-			<div id="App" className="bodyApp">
-
+			<div id='App' className='bodyApp'>
 				<div className='backgroundImage' />
 
 				<img className='columnLeft' src='columns/pinkcolumn1.png' />
 
-				<div className="titleBackground" >
-					<div className="titleShadow">
-						<div id='title' className='title' onClick={ this.loadWelcome }>
+				<div className='titleBackground'>
+					<div className='titleShadow'>
+						<div id='title' className='title' onClick={this.loadWelcome}>
 							k a t a g o r a
 						</div>
 					</div>
@@ -247,15 +244,14 @@ class App extends React.Component {
 
 				<div className='quote'>
 					<p>
-						The word 'Agora' (pronounced 'ah-go-RAH’) was a central public
-						space in ancient Greek city-states. The literal meaning of the
-						word is "gathering place" or "assembly". The agora was the
-						center of the athletic, artistic, spiritual and political life
-							in the city.{ " " }
+						The word 'Agora' (pronounced 'ah-go-RAH’) was a central public space in
+						ancient Greek city-states. The literal meaning of the word is "gathering
+						place" or "assembly". The agora was the center of the athletic, artistic,
+						spiritual and political life in the city.{" "}
 					</p>
 				</div>
 				<div className='blogContainer'>
-					<Router page={ this.state.page } />
+					<Router page={this.state.page} />
 				</div>
 				{/* <div className='blogContent'>
 							<div className='blogYellowBox' />
@@ -263,16 +259,13 @@ class App extends React.Component {
 
 						</div> */}
 
-
 				<div className='nav'>
-					<ul style={ { listStyle: "none" } }>
+					<ul style={{ listStyle: "none" }}>
 						<li>
 							<div className='container'>
 								<div className='menuBackground'>
 									<div
-										className={
-											this.state.showGirl ? "girlShow" : "girlHide"
-										}
+										className={this.state.showGirl ? "girlShow" : "girlHide"}
 									/>
 								</div>
 								<img
@@ -280,21 +273,21 @@ class App extends React.Component {
 									id='girl'
 									src='girl.png'
 									alt='Girl'
-									onClick={ this.loadAbout }
-									onMouseEnter={ () => {
+									onClick={this.loadAbout}
+									onMouseEnter={() => {
 										this.setState({
-											showGirl: true
+											showGirl: true,
 										});
-									} }
-									onMouseLeave={ () => {
+									}}
+									onMouseLeave={() => {
 										this.setState({
-											showGirl: false
+											showGirl: false,
 										});
-									} }
+									}}
 								/>
 
 								<div id='girlText' className='hidden'>
-									<h1 style={ { paddingTop: "6.5px", marginLeft: "0px" } }>
+									<h1 style={{ paddingTop: "6.5px", marginLeft: "0px" }}>
 										&nbsp; Who is She
 									</h1>
 								</div>
@@ -305,9 +298,7 @@ class App extends React.Component {
 							<div className='container'>
 								<div className='menuBackground'>
 									<div
-										className={
-											this.state.showGram ? "gramShow" : "gramHide"
-										}
+										className={this.state.showGram ? "gramShow" : "gramHide"}
 									/>
 								</div>
 
@@ -319,20 +310,20 @@ class App extends React.Component {
 									width='50'
 									height='50'
 									// onClick={}
-									onMouseEnter={ () => {
+									onMouseEnter={() => {
 										this.setState({
-											showGram: true
+											showGram: true,
 										});
-									} }
-									onMouseLeave={ () => {
+									}}
+									onMouseLeave={() => {
 										this.setState({
-											showGram: false
+											showGram: false,
 										});
-									} }
+									}}
 								/>
 
 								<div id='gramText' className='hidden'>
-									<h1 style={ { paddingTop: "5px", marginLeft: "10px" } }>
+									<h1 style={{ paddingTop: "5px", marginLeft: "10px" }}>
 										&nbsp; Off the Gram
 									</h1>
 								</div>
@@ -343,9 +334,7 @@ class App extends React.Component {
 							<div className='container'>
 								<div className='menuBackground'>
 									<div
-										className={
-											this.state.showHouse ? "houseShow" : "houseHide"
-										}
+										className={this.state.showHouse ? "houseShow" : "houseHide"}
 									/>
 								</div>
 
@@ -356,28 +345,29 @@ class App extends React.Component {
 									alt='House'
 									width='50'
 									height='50'
-									onClick={ this.loadPortfolio }
-									onMouseEnter={ () => {
+									onClick={this.loadPortfolio}
+									onMouseEnter={() => {
 										this.setState({
-											showHouse: true
+											showHouse: true,
 										});
-									} }
-									onMouseLeave={ () => {
+									}}
+									onMouseLeave={() => {
 										this.setState({
-											showHouse: false
+											showHouse: false,
 										});
-									} }
+									}}
 								/>
 
 								<div id='houseText' className='hidden'>
-									<h1 style={ { paddingTop: "6px", marginLeft: "10px" } }>
+									<h1 style={{ paddingTop: "6px", marginLeft: "10px" }}>
 										&nbsp; Portfolio
 									</h1>
 								</div>
 							</div>
 						</li>
 					</ul>
-				</div><img className='columnRight' src='columns/pinkcolumn2.png' />
+				</div>
+				<img className='columnRight' src='columns/pinkcolumn2.png' />
 			</div>
 		);
 	}
