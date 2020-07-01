@@ -269,9 +269,17 @@ export class Portfolio extends React.Component {
 							}}
 						>
 							<div className='fancyHeader'>TUTORIALS</div>
+							<iframe
+								width='560'
+								height='315'
+								src='https://www.youtube.com/embed/MLv1We_iPeg?start=1'
+								frameBorder='0'
+								allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+								allowFullScreen
+							></iframe>
 							<p>
 								{" "}
-								COMING SOON!!! For now, here's a cute picture of my cuddly kitties
+								MORE TO COME!! For now, here's a cute picture of my cuddly kitties
 								c:
 							</p>
 							<img src='portfolio/lovelyKitties.jpg'></img>
