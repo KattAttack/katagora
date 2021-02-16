@@ -61,7 +61,7 @@ export class About extends React.Component {
 							this.dropdownHide("Me");
 						}}
 					>
-						Kate Young
+						Katrina Kozorezov
 					</span>
 
 					<div className='boxMe' style={{ maxHeight: this.state.showMe ? 500 : 0 }}>
@@ -75,10 +75,17 @@ export class About extends React.Component {
 							}}
 							className='aboutMeText'
 						>
-							<div className='A1'>My relationship with identity is complicated</div>
+							<div className='A1'>Hello, nice to meet you</div>
 
 							<div className='A2'>
-								Will expand on this once released to the public.
+								A little bit about me. I was born in Washington state to Russian
+								immigrant parents. Have had the pleasure of traveling to Moldova,
+								Karelia, and Finland to work and lead summer camps for local
+								children. After my family moved to Florida I participated in Dual
+								Enrollement, finishing Highschool and College early before going on
+								to study English at the University of Central Florida. I'm a
+								Published writer and am currently working as a Software Engineer at
+								Technelogica.
 								{/* and an Instagram or LinkedIn bio just won't cut it. Filtered,
 								selective, and character restricted, these entries are good for what
 								they're used for. But what I choose to share here goes beyond a
@@ -106,7 +113,7 @@ export class About extends React.Component {
 							this.dropdownHide("Rel");
 						}}
 					>
-						Religion
+						Technology
 					</span>
 					<div className='boxRel' style={{ maxHeight: this.state.showRel ? 500 : 0 }}>
 						<div
@@ -119,8 +126,12 @@ export class About extends React.Component {
 							}}
 							className='aboutRelText'
 						>
-							<div className='A1'>More on this coming soon</div>
-							<div className='A2'>Nothing here yet but keep your eyes peeled!</div>
+							<div className='A1'>A list of what I've learned so far</div>
+							<div className='A2'>
+								JavaScript, React, HTML5, CSS3/SASS, REST APIs,
+								<br /> Express.js, Node.js, Typescript, JQuery, Git, React Move,
+								React Native, Webpack, AWS
+							</div>
 						</div>
 					</div>
 				</div>
@@ -150,8 +161,11 @@ export class About extends React.Component {
 							<div className='A1'>I hope to achieve many things</div>
 							<div className='A2'>
 								Find my next coding adventure, learn React Native and MongoDB, visit
-								Athens, repaint my car, create a coffee table book, design my own
-								fashion line/accessories, write a collection of nonfiction shorts...
+								Athens, <br />
+								finish the blog site I started from scratch, repaint my car, create
+								a coffee table book, <br />
+								design my own fashion line/accessories, write a collection of
+								nonfiction shorts...
 							</div>
 						</div>
 					</div>
@@ -179,10 +193,10 @@ export class About extends React.Component {
 							}}
 							className='aboutInfoText'
 						>
-							<div className='A1'>Where you can see more of me</div>
+							<div className='A1'>Let's get in touch</div>
 							<div className='A2'>
-								Email: kateyoung.dev@gmail.com <br></br>
-								linkedIn: https://www.linkedin.com/in/katxagora/<br></br>
+								Email: katrinakozorezov@gmail.com <br></br>
+								LinkedIn: https://www.linkedin.com/in/katxagora/<br></br>
 								GitHub: https://github.com/KattAttack
 							</div>
 						</div>

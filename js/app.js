@@ -10,6 +10,7 @@ class App extends React.Component {
 		this.state = { page: "", showGirl: false, showGram: false, showHouse: false };
 		this.loadWelcome = this.loadWelcome.bind(this);
 		this.loadAbout = this.loadAbout.bind(this);
+		this.loadGram = this.loadGram.bind(this);
 		this.loadPortfolio = this.loadPortfolio.bind(this);
 		this.loadShapes = this.loadShapes.bind(this);
 		this.loadKittyCards = this.loadKittyCards.bind(this);
@@ -41,6 +42,17 @@ class App extends React.Component {
 		this.setState({
 			url,
 			page: "welcome",
+		});
+	}
+
+	loadGram() {
+		const url = `${this.getHostUrl()}gram`;
+		console.log("URL", url);
+		console.log("history", history);
+		history.pushState(null, "", url);
+		this.setState({
+			url,
+			page: "gram",
 		});
 	}
 
@@ -120,6 +132,10 @@ class App extends React.Component {
 		switch (pathName) {
 			case "/about":
 				this.loadAbout();
+				break;
+
+			case "/about":
+				this.loadGram();
 				break;
 
 			case "/portfolio":
@@ -215,6 +231,9 @@ class App extends React.Component {
 	}
 
 	render() {
+		if (this.state.page === "gram") {
+			return <Router page={this.state.page} />;
+		}
 		if (this.state.page === "tictactoe") {
 			return <Router page={this.state.page} />;
 		}
@@ -229,9 +248,11 @@ class App extends React.Component {
 		}
 		return (
 			<div id='App' className='bodyApp'>
-				<div className='backgroundImage' />
-
-				<img className='columnLeft' src='columns/pinkcolumn1.png' />
+				<img className='columnLeft' src='columns/fancyColumnEdit.svg' />
+				<img id='oliveBranchL1' src='background/oliveBranch1.svg' />
+				<img id='oliveBranchL2' src='background/oliveBranch.svg' />
+				<img id='oliveBranchR1' src='background/darkOlive.svg' />
+				<img id='oliveBranchR2' src='background/oliveBranch1.svg' />
 
 				<div className='titleBackground'>
 					<div className='titleShadow'>
@@ -239,7 +260,7 @@ class App extends React.Component {
 							k a t a g o r a
 						</div>
 					</div>
-					<img className='leafLine' src='columns/method-draw-image.svg' />
+					{/* <img className='leafLine' src='columns/method-draw-image.svg' /> */}
 				</div>
 
 				<div className='quote'>
@@ -309,7 +330,7 @@ class App extends React.Component {
 									alt='Instagram'
 									width='50'
 									height='50'
-									// onClick={}
+									onClick={this.loadGram}
 									onMouseEnter={() => {
 										this.setState({
 											showGram: true,
@@ -367,7 +388,7 @@ class App extends React.Component {
 						</li>
 					</ul>
 				</div>
-				<img className='columnRight' src='columns/pinkcolumn2.png' />
+				<img className='columnRight' src='columns/fancyColumnEdit.svg' />
 			</div>
 		);
 	}
