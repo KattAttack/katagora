@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 1587.63 985.74"
+   version="1.1"
+   sodipodi:docname="purpleBlobb.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata3733">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1001"
+     id="namedview3731"
+     showgrid="false"
+     inkscape:zoom="0.81968877"
+     inkscape:cx="793.815"
+     inkscape:cy="492.87"
+     inkscape:window-x="7191"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs3726">
+    <style
+       id="style3724">.cls-1{fill:#dddae5;}</style>
+  </defs>
+  <path
+     inkscape:connector-curvature="0"
+     class="cls-1"
+     d="m 1399.7239,194.95405 c 0,0 -291.1527,-327.23781 -592.00009,-134.000008 C 510.82435,251.65603 530.89059,359.96682 505.58224,400.13482 502.11948,421.75799 404.9126,511.75954 261.62397,465.79598 4.1441875,383.20263 -166.5017,627.24537 1.9438299,701.37254 43.24372,719.54722 85.723855,796.95405 199.72385,846.95405 c 114,50 283.99996,177.99995 434.99996,126.99998 151,-50.99998 927.00009,59.99997 951.00009,-272.99998 24,-333 -186,-506 -186,-506 z"
+     id="path3728"
+     style="fill:#dddae5"
+     sodipodi:nodetypes="cscsssssc" />
+</svg>

@@ -1,11 +1,12 @@
 import React from "react";
 import { Welcome } from "./Welcome";
 import { About } from "./About";
+import { Gram } from "./Gram";
 import { Portfolio } from "./Portfolio";
 import { ShapesGame } from "./shapes/src/components/ShapesGame";
 import { Tictactoe } from "./Tictactoe";
 import { KittyCards } from "./kittyCards/index";
-import { MazeGame } from "./mazeGame/index"
+import { MazeGame } from "./mazeGame/index";
 
 export default function Router(props) {
 	switch (props.page) {
@@ -14,6 +15,9 @@ export default function Router(props) {
 
 		case "about":
 			return <About />;
+
+		case "gram":
+			return <Gram />;
 
 		case "portfolio":
 			return <Portfolio />;
@@ -28,7 +32,7 @@ export default function Router(props) {
 			return <KittyCards />;
 
 		case "mazeGame":
-			return <MazeGame />
+			return <MazeGame />;
 
 		default:
 			return <Welcome />;

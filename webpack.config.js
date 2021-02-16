@@ -24,6 +24,25 @@ module.exports = (env) => {
 		module: {
 			rules: [
 				{
+					test: /\.html$/,
+					loader: "html-loader?attrs[]=video:src",
+				},
+				{
+					test: /\.(woff|woff2|eot|ttf|otf)$/,
+					loader: "file-loader",
+				},
+				{
+					test: /\.mp4$/,
+					use: [
+						{
+							loader: "url-loader",
+							options: {
+								limit: 8192,
+							},
+						},
+					],
+				},
+				{
 					test: /.jsx?$/,
 					exclude: /node_modules/,
 					use: {
@@ -38,9 +57,10 @@ module.exports = (env) => {
 					},
 				},
 				{
-					test: /\.scss$/,
+					test: /\.(scss|css)$/,
 					use: ["style-loader", "css-loader", "sass-loader"],
 				},
+
 				{
 					test: /\.md$/,
 					use: [
