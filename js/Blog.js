@@ -59,7 +59,7 @@ export function Blog() {
 		<div id='blog' className='blog'>
 			<BrowserRouter history={createBrowserHistory()}>
 				<Link
-					to='/undefinedgram'
+					to='/gram'
 					id='blogTitle'
 					className='blogTitle'
 					onClick={() => {
@@ -103,7 +103,7 @@ export function Blog() {
 				</div>
 
 				<Switch>
-					<Route exact path='/undefinedgram' component={BlogHome} />
+					<Route exact path='/gram' component={BlogHome} />
 					<Route exact path='/journal' component={Journal} />
 					<Route path='/shop' component={Shop} />
 					<Route path='/journal/:id' component={SinglePost} />
