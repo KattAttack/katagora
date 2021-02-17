@@ -65,7 +65,7 @@ export class Gram extends React.Component {
 			<div id='gram' className='gramContainer'>
 				<img
 					className={this.state.message === false ? "cupid moveCupid" : "cupid"}
-					src='cupidTransparent.png'
+					src='CupidTransparent.png'
 				/>
 				{this.state.message === false ? <Blog /> : null}
 
