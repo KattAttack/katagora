@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/styles.scss";
+import vid from "./featuredPost1.mp4";
 
 export default function BlogHome() {
 	const [latestPostMenu, setLatestPostMenu] = useState("Recent");
@@ -113,7 +114,7 @@ export default function BlogHome() {
 						autoPlay
 						muted
 						loop
-						src='./featuredPost1.mp4'
+						src={vid}
 					></video>
 
 					<h1> How To Write An Engaging Description </h1>
